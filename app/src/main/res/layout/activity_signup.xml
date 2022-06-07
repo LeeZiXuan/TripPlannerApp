@@ -7,24 +7,50 @@
     android:padding="30dp"
     android:orientation="vertical"
     android:background="@drawable/bg1"
-    tools:context=".LoginActivity">
+    tools:context=".SignupActivity">
 
     <TextView
+        android:id="@+id/t2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Let's Go,"
+        android:text="Hello, "
         android:textColor="@color/white"
-        android:textSize="50dp"
+        android:textSize="40dp"
         android:textStyle="bold"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="50dp"
-        android:id="@+id/title1"/>
+        android:layout_marginTop="40dp" />
+    <TextView
+        android:id="@+id/t3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/t2"
+        android:text="nice to meet you."
+        android:textColor="@color/white"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="50dp" />
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/t3"
+        android:background="@drawable/input_bg"
+        android:drawableLeft="@drawable/ic_email"
+        android:drawablePadding="10dp"
+        android:hint="Username"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        android:textColorHint="@color/white"
+        android:textSize="20dp" />
 
     <EditText
         android:id="@+id/gmailID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/title1"
+        android:layout_below="@id/username"
         android:background="@drawable/input_bg"
         android:drawableLeft="@drawable/ic_email"
         android:drawablePadding="10dp"
@@ -53,38 +79,26 @@
         android:textColorHint="@color/white"
         android:textSize="20dp" />
 
-    <TextView
-        android:id="@+id/forgotPassword"
+    <Button
+        android:id="@+id/signupBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/password"
-        android:text="Forgot Password?"
-        android:textColor="@color/white"
-        android:textSize="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="20dp"
-        android:paddingRight="20dp"
-        android:gravity="right"/>
-
-    <Button
-        android:id="@+id/loginBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/forgotPassword"
+        android:layout_marginTop="30dp"
         android:background="@drawable/login_bg"
-        android:text="Log in"
+        android:text="Sign Up"
         android:textSize="20dp" />
 
     <TextView
+        android:id="@+id/hasAccount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/loginBtn"
-        android:text="New user? Register Here."
+        android:layout_below="@id/signupBtn"
+        android:text="Already have an account? Login here."
         android:textColor="@color/white"
         android:textSize="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="50dp"
-        android:id="@+id/hasRegister"
         android:gravity="center_horizontal"/>
 
 </RelativeLayout>
