@@ -26,7 +26,7 @@ public class TripPlannerAppModel {
         this.user_birth = user_birth;
     }
 
-    public TripPlannerAppModel() {
+    public TripPlannerAppModel(int i, String s, String toString, String string) {
     }
 
     //toString is necessary for printing the contents of a class object

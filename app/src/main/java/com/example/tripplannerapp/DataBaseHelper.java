@@ -1,5 +1,6 @@
 package com.example.tripplannerapp;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -36,6 +37,24 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+
+    }
+
+    public boolean addOne(TripPlannerAppModel tripPlannerAppModel){
+        SQLiteDatabase sqLiteOpenHelper = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put(USER_NAME, tripPlannerAppModel.getUser_name());
+        cv.put(USER_EMAIL, tripPlannerAppModel.getUser_email());
+        cv.put(USER_PASS, tripPlannerAppModel.getUser_pass());
+
+        long insert = sqLiteOpenHelper.insert(USER_TABLE,null, cv);
+        if (insert == -1){
+            return false;
+        }
+        else {
+            return true;
+        }
 
     }
 }
