@@ -35,7 +35,7 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tv_username"
         android:layout_width="175dp"
         android:layout_height="38dp"
         android:layout_below="@+id/textView"

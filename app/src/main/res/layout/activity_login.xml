@@ -1,90 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="30dp"
-    android:orientation="vertical"
-    android:background="@drawable/bg1"
-    tools:context=".LoginActivity">
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Let's Go,"
-        android:textColor="@color/white"
-        android:textSize="50dp"
-        android:textStyle="bold"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="50dp"
-        android:id="@+id/title1"/>
-
-    <EditText
-        android:id="@+id/gmailID"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/title1"
-        android:background="@drawable/input_bg"
-        android:drawableLeft="@drawable/ic_email"
-        android:drawablePadding="10dp"
-        android:hint="Gmail"
-        android:paddingLeft="20dp"
-        android:paddingTop="10dp"
-        android:paddingRight="10dp"
-        android:paddingBottom="10dp"
-        android:textColorHint="@color/white"
-        android:textSize="20dp" />
-
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/gmailID"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/input_bg"
-        android:drawableLeft="@drawable/ic_lock"
-        android:drawablePadding="10dp"
-        android:hint="Password"
-        android:paddingLeft="20dp"
-        android:paddingTop="10dp"
-        android:paddingRight="10dp"
-        android:paddingBottom="10dp"
-        android:textColorHint="@color/white"
-        android:textSize="20dp" />
-
-    <TextView
-        android:id="@+id/forgotPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/password"
-        android:text="Forgot Password?"
-        android:textColor="@color/white"
-        android:textSize="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="20dp"
-        android:paddingRight="20dp"
-        android:gravity="right"/>
+    android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/loginBtn"
-        android:layout_width="match_parent"
+        android:id="@+id/btn_login"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/forgotPassword"
-        android:background="@drawable/login_bg"
-        android:text="Log in"
-        android:textSize="20dp" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/loginBtn"
-        android:text="New user? Register Here."
-        android:textColor="@color/white"
-        android:textSize="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="50dp"
-        android:id="@+id/hasRegister"
-        android:gravity="center_horizontal"/>
-
-</RelativeLayout>
+        android:text="Login"
+        tools:layout_editor_absoluteX="157dp"
+        tools:layout_editor_absoluteY="339dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
