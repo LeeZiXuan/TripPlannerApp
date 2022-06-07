@@ -21,6 +21,10 @@ public class LoginActivity extends AppCompatActivity {
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //OpenDatabase
+                DataBaseHelper dataBaseHelper = new DataBaseHelper(LoginActivity.this);
+
+                //GoMainPage
                 openHomePage();
 
             }
