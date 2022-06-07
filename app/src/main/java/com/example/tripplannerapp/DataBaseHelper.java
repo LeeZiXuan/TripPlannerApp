@@ -7,6 +7,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
 public class DataBaseHelper extends SQLiteOpenHelper {
+    public static final String DBNAME="TripPlannerApp.db";
+
+    //USER TABLE
     public static final String USER_TABLE = "USER_TABLE";
     public static final String ID = "ID";
     public static final String USER_NAME = "USER_NAME";
@@ -18,12 +21,13 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public static final String USER_ADDRESS = "USER_ADDRESS";
     public static final String USER_BIRTH = "USER_BIRTH";
 
-    public DataBaseHelper(@Nullable Context context) {
+    public DataBaseHelper(Context context) {
         super(context, "TripPlannerApp.db", null, 1);
     }
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
+        sqLiteDatabase.execSQL("create table login(email TEXT primary key, password TEXT, username TEXT)");
         String createTableStatement = "CREATE TABLE " + USER_TABLE + " (" + ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + USER_NAME + " TEXT, " + USER_AGE + " INT, " + USER_PASS + " TEXT, " + USER_PHONE + " TEXT, " + USER_GENDER + " TEXT, " + USER_EMAIL + " TEXT, " + USER_ADDRESS + " TEXT, " + USER_BIRTH + " DATE)";
 
         sqLiteDatabase.execSQL(createTableStatement);

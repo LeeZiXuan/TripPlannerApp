@@ -21,7 +21,7 @@
         android:id="@+id/title1"/>
 
     <EditText
-        android:id="@+id/gmailID"
+        android:id="@+id/emailID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/title1"

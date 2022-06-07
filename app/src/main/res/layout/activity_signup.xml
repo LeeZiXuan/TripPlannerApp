@@ -47,7 +47,7 @@
         android:textSize="20dp" />
 
     <EditText
-        android:id="@+id/gmailID"
+        android:id="@+id/emailID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/username"
@@ -67,7 +67,7 @@
         android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/gmailID"
+        android:layout_below="@id/emailID"
         android:layout_marginTop="20dp"
         android:background="@drawable/input_bg"
         android:drawableLeft="@drawable/ic_lock"
@@ -92,16 +92,17 @@
         android:paddingTop="10dp"
         android:paddingBottom="10dp"/>
 
-    <TextView
-        android:id="@+id/hasAccount"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/signupBtn"
-        android:text="Already have an account? Login here."
-        android:textColor="@color/white"
-        android:textSize="10dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="50dp"
-        android:gravity="center_horizontal"/>
+        <TextView
+            android:id="@+id/hasAccount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/signupBtn"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="50dp"
+            android:gravity="center_horizontal"
+            android:text="Already have an account? Login here."
+            android:textColor="@color/white"
+            android:textSize="10dp" />
+
 
 </RelativeLayout>
