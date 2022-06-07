@@ -36,13 +36,13 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/t3"
         android:background="@drawable/input_bg"
-        android:drawableLeft="@drawable/ic_email"
+        android:drawableLeft="@drawable/ic_person"
         android:drawablePadding="10dp"
         android:hint="Username"
         android:paddingLeft="20dp"
-        android:paddingTop="10dp"
+        android:paddingTop="15dp"
         android:paddingRight="10dp"
-        android:paddingBottom="10dp"
+        android:paddingBottom="15dp"
         android:textColorHint="@color/white"
         android:textSize="20dp" />
 
@@ -56,9 +56,10 @@
         android:drawablePadding="10dp"
         android:hint="Gmail"
         android:paddingLeft="20dp"
-        android:paddingTop="10dp"
+        android:paddingTop="15dp"
         android:paddingRight="10dp"
-        android:paddingBottom="10dp"
+        android:paddingBottom="15dp"
+        android:layout_marginTop="20dp"
         android:textColorHint="@color/white"
         android:textSize="20dp" />
 
@@ -73,9 +74,9 @@
         android:drawablePadding="10dp"
         android:hint="Password"
         android:paddingLeft="20dp"
-        android:paddingTop="10dp"
+        android:paddingTop="15dp"
         android:paddingRight="10dp"
-        android:paddingBottom="10dp"
+        android:paddingBottom="15dp"
         android:textColorHint="@color/white"
         android:textSize="20dp" />
 
@@ -87,7 +88,9 @@
         android:layout_marginTop="30dp"
         android:background="@drawable/login_bg"
         android:text="Sign Up"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"/>
 
     <TextView
         android:id="@+id/hasAccount"
@@ -97,7 +100,7 @@
         android:text="Already have an account? Login here."
         android:textColor="@color/white"
         android:textSize="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
         android:layout_marginBottom="50dp"
         android:gravity="center_horizontal"/>
 
