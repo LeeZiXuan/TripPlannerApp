@@ -16,19 +16,30 @@ import java.util.Calendar;
 
 public class AddActActivity extends AppCompatActivity {
 
-    EditText date_time_in;
+    EditText start_date_time_in;
+    EditText end_date_time_in;
 
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_activity);
-        date_time_in=findViewById(R.id.et_activity_startdate);
+        start_date_time_in =findViewById(R.id.et_activity_startdatetime);
+        start_date_time_in.setInputType(InputType.TYPE_NULL);
 
-        date_time_in.setInputType(InputType.TYPE_NULL);
+        end_date_time_in =findViewById(R.id.et_activity_enddatetime);
+        end_date_time_in.setInputType(InputType.TYPE_NULL);
 
-        date_time_in.setOnClickListener(new View.OnClickListener() {
+        start_date_time_in.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showDateTimeDialog(date_time_in);
+                showDateTimeDialog(start_date_time_in);
+
+            }
+        });
+
+        end_date_time_in.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showDateTimeDialog(end_date_time_in);
 
             }
         });
