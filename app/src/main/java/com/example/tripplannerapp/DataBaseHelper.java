@@ -1,6 +1,8 @@
 package com.example.tripplannerapp;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -27,15 +29,50 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL("create table login(email TEXT primary key, password TEXT, username TEXT)");
-        String createTableStatement = "CREATE TABLE " + USER_TABLE + " (" + ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + USER_NAME + " TEXT, " + USER_AGE + " INT, " + USER_PASS + " TEXT, " + USER_PHONE + " TEXT, " + USER_GENDER + " TEXT, " + USER_EMAIL + " TEXT, " + USER_ADDRESS + " TEXT, " + USER_BIRTH + " DATE)";
 
+        //create table for login
+        sqLiteDatabase.execSQL("create table login(emailID TEXT primary key, password TEXT, username TEXT)");
+
+        //create table for user
+        String createTableStatement = "CREATE TABLE " + USER_TABLE + " (" + ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + USER_NAME + " TEXT, " + USER_AGE + " INT, " + USER_PASS + " TEXT, " + USER_PHONE + " TEXT, " + USER_GENDER + " TEXT, " + USER_EMAIL + " TEXT, " + USER_ADDRESS + " TEXT, " + USER_BIRTH + " DATE)";
         sqLiteDatabase.execSQL(createTableStatement);
 
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+        sqLiteDatabase.execSQL("drop table if exists login");
+    }
 
+    public Boolean InsertData(String emailID, String password, String username){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        values.put("emailID", emailID);
+        values.put("password", password);
+        values.put("username", username);
+
+        long result=sqLiteDatabase.insert("login", null, values);
+        if(result==-1) return false;
+        else
+            return true;
+    }
+
+    public Boolean checkEmail(String emailID){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery("select * from login where emailID=?", new String[] {emailID});
+        if(cursor.getCount()>0)
+            return true;
+        else
+            return false;
+    }
+
+    public Boolean checkPassword(String emailID, String password){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery("select * from login where emailID=? and password=?", new String[] {emailID,password});
+        if(cursor.getCount()>0)
+            return true;
+        else
+            return false;
     }
 }
