@@ -17,10 +17,12 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class SignupActivity extends AppCompatActivity {
 
     FirebaseAuth fAuth;
+    FirebaseDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,11 +38,12 @@ public class SignupActivity extends AppCompatActivity {
         TextView hasAcc=findViewById(R.id.loginHere);
 
         fAuth = FirebaseAuth.getInstance();
+        db = FirebaseDatabase.getInstance();
 
-        if(fAuth.getCurrentUser() != null){
+        /*if(fAuth.getCurrentUser() != null){
             startActivity(new Intent(getApplicationContext(),MainActivity.class));
             finish();
-        }
+        }*/
 
         signUp.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -72,6 +75,10 @@ public class SignupActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
+                            Users users = new Users(emailTxt, passTxt, usernameTxt, phoneTxt);
+                            String id = task.getResult().getUser().getUid();
+                            db.getReference().child("Users").child(id).setValue(users);
+
                             Toast.makeText(SignupActivity.this,"User created", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(),MainActivity.class));
                         }else{
