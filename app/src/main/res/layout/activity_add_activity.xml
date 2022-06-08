@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    tools:context=".AddActActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="0dp"
+        android:background="#9CFFFFFF">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="121dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="132dp"
+            android:text="Activity"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="#00FFFFFF"
+            app:srcCompat="@drawable/ic_baseline_arrow_back_ios_24" />
+
+        <EditText
+            android:id="@+id/et_activityName"
+            android:layout_width="371dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/input_bg"
+            android:drawablePadding="10dp"
+            android:hint="Activity Name"
+            android:paddingLeft="20dp"
+            android:paddingTop="15dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="15dp"
+            android:textColorHint="@color/white"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/et_activityType"
+            android:layout_width="371dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_activityName"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/input_bg"
+            android:drawablePadding="10dp"
+            android:hint="Activity Type"
+            android:paddingLeft="20dp"
+            android:paddingTop="15dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="15dp"
+            android:textColorHint="@color/white"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/et_activity_address"
+            android:layout_width="371dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_activity_enddatetime"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="35dp"
+            android:background="@drawable/input_bg"
+            android:drawablePadding="10dp"
+            android:hint="Address"
+            android:paddingLeft="20dp"
+            android:paddingTop="15dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="15dp"
+            android:textColorHint="@color/white"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/et_activity_des"
+            android:layout_width="371dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_activity_address"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="35dp"
+            android:background="@drawable/input_bg"
+            android:drawablePadding="10dp"
+            android:hint="Desciption"
+            android:paddingLeft="20dp"
+            android:paddingTop="15dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="15dp"
+            android:textColorHint="@color/white"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/et_activity_startdatetime"
+            android:layout_width="185dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_activityType"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/input_bg"
+            android:drawableLeft="@drawable/ic_baseline_date_range_24"
+            android:drawablePadding="10dp"
+            android:hint="Start Date"
+            android:inputType="none"
+            android:paddingLeft="20dp"
+            android:paddingTop="15dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="15dp"
+            android:textColorHint="@color/white"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/et_activity_enddatetime"
+            android:layout_width="185dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_activity_startdatetime"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/input_bg"
+            android:drawableLeft="@drawable/ic_baseline_date_range_24"
+            android:drawablePadding="10dp"
+            android:hint="End Date"
+            android:paddingLeft="20dp"
+            android:paddingTop="15dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="15dp"
+            android:textColorHint="@color/white"
+            android:textSize="20dp"
+            android:inputType="none"/>
+
+        <Button
+            android:id="@+id/btn_addActivity"
+            android:layout_width="261dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_activity_des"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="75dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginEnd="75dp"
+            android:background="@drawable/login_bg"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="ADD"
+            android:textSize="20sp" />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
