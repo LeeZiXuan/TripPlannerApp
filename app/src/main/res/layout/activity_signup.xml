@@ -31,26 +31,11 @@
         android:layout_marginBottom="50dp" />
 
     <EditText
-        android:id="@+id/username"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/t3"
-        android:background="@drawable/input_bg"
-        android:drawableLeft="@drawable/ic_person"
-        android:drawablePadding="10dp"
-        android:hint="Username"
-        android:paddingLeft="20dp"
-        android:paddingTop="15dp"
-        android:paddingRight="10dp"
-        android:paddingBottom="15dp"
-        android:textColorHint="@color/white"
-        android:textSize="20dp" />
-
-    <EditText
         android:id="@+id/emailID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/username"
+        android:layout_below="@id/t3"
+        android:layout_marginTop="20dp"
         android:background="@drawable/input_bg"
         android:drawableLeft="@drawable/ic_email"
         android:drawablePadding="10dp"
@@ -59,7 +44,6 @@
         android:paddingTop="15dp"
         android:paddingRight="10dp"
         android:paddingBottom="15dp"
-        android:layout_marginTop="20dp"
         android:textColorHint="@color/white"
         android:textSize="20dp" />
 
@@ -80,11 +64,45 @@
         android:textColorHint="@color/white"
         android:textSize="20dp" />
 
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/password"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/input_bg"
+        android:drawableLeft="@drawable/ic_person"
+        android:drawablePadding="10dp"
+        android:hint="Username"
+        android:paddingLeft="20dp"
+        android:paddingTop="15dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="15dp"
+        android:textColorHint="@color/white"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/phoneNum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/username"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/input_bg"
+        android:drawableLeft="@drawable/ic_person"
+        android:drawablePadding="10dp"
+        android:hint="Phone Number"
+        android:paddingLeft="20dp"
+        android:paddingTop="15dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="15dp"
+        android:textColorHint="@color/white"
+        android:textSize="20dp" />
+
     <Button
         android:id="@+id/signupBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/password"
+        android:layout_below="@id/phoneNum"
         android:layout_marginTop="30dp"
         android:background="@drawable/login_bg"
         android:text="Sign Up"
@@ -97,12 +115,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/signupBtn"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="50dp"
+            android:layout_marginTop="5dp"
             android:gravity="center_horizontal"
             android:text="Already have an account? Login here."
             android:textColor="@color/white"
-            android:textSize="10dp" />
+            android:textSize="15dp" />
 
 
 </RelativeLayout>

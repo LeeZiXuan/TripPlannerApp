@@ -31,6 +31,7 @@ public class SignupActivity extends AppCompatActivity {
             public void onClick(View v){
 
 
+            }
         });
 
         hasAccBtn.setOnClickListener(new View.OnClickListener(){

@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/User/AndroidStudioProjects/TripPlannerApp/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.1505" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/TripPlannerApp/app/src/main/res/drawable/ic_baseline_edit_24.xml" value="0.1505" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/TripPlannerApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1505" />
         <entry key="..\:/Users/User/AndroidStudioProjects/TripPlannerApp/app/src/main/res/drawable/input_bg.xml" value="0.184" />
         <entry key="..\:/Users/User/AndroidStudioProjects/TripPlannerApp/app/src/main/res/drawable/login_bg.xml" value="0.155" />
         <entry key="..\:/Users/User/AndroidStudioProjects/TripPlannerApp/app/src/main/res/drawable/loginbtn_bg.xml" value="0.184" />
