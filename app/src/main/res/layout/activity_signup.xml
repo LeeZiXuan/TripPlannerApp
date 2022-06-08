@@ -31,7 +31,7 @@
         android:layout_marginBottom="50dp" />
 
     <EditText
-        android:id="@+id/emailID"
+        android:id="@+id/et_activityName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/t3"
@@ -51,7 +51,7 @@
         android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/emailID"
+        android:layout_below="@id/et_activityName"
         android:layout_marginTop="20dp"
         android:background="@drawable/input_bg"
         android:drawableLeft="@drawable/ic_lock"

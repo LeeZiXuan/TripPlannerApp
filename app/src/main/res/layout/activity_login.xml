@@ -67,7 +67,7 @@
         android:gravity="right"/>
 
     <Button
-        android:id="@+id/loginBtn"
+        android:id="@+id/btn_addActivity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/forgotPassword"
@@ -80,7 +80,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/loginBtn"
+        android:layout_below="@id/btn_addActivity"
         android:text="New user? Register Here."
         android:textColor="@color/white"
         android:textSize="15dp"
