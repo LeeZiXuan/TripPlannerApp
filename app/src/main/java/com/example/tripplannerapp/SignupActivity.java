@@ -1,43 +1,92 @@
 package com.example.tripplannerapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.tripplannerapp.databinding.ActivityMainBinding;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+
 public class SignupActivity extends AppCompatActivity {
 
-    EditText username,email, password;
-    Button signUp;
+    FirebaseAuth fAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
-        username=findViewById(R.id.username);
-        email=findViewById(R.id.emailID);
-        password=findViewById(R.id.password);
-        signUp=findViewById(R.id.signupBtn);
+        EditText email=findViewById(R.id.email);
+        EditText password=findViewById(R.id.password);
+        EditText username=findViewById(R.id.username);
+        EditText phoneNum=findViewById(R.id.phoneNum);
 
-        TextView hasAccBtn=findViewById(R.id.hasAccount);
+        Button signUp=findViewById(R.id.signupBtn);
+        TextView hasAcc=findViewById(R.id.loginHere);
+
+        fAuth = FirebaseAuth.getInstance();
+
+        if(fAuth.getCurrentUser() != null){
+            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+            finish();
+        }
 
         signUp.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
+                String emailTxt = email.getText().toString().trim();
+                String passTxt = password.getText().toString().trim();
+                String usernameTxt = username.getText().toString();
+                String phoneTxt = phoneNum.getText().toString();
 
+                if(TextUtils.isEmpty(emailTxt)){
+                    email.setError("Email is required");
+                    return;
+                }
+                if(TextUtils.isEmpty(passTxt)){
+                    password.setError("Password is required");
+                    return;
+                }
+                if(TextUtils.isEmpty(usernameTxt)){
+                    username.setError("Username is required");
+                    return;
+                }
+                if(TextUtils.isEmpty(phoneTxt)){
+                    phoneNum.setError("Phone number is required");
+                    return;
+                }
 
+                //register the user in the firebase
+                fAuth.createUserWithEmailAndPassword(emailTxt,passTxt).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if(task.isSuccessful()){
+                            Toast.makeText(SignupActivity.this,"User created", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                        }else{
+                            Toast.makeText(SignupActivity.this,"Error!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+
+                    }
+                });
             }
         });
 
-        hasAccBtn.setOnClickListener(new View.OnClickListener(){
+        hasAcc.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-
+                startActivity(new Intent(SignupActivity.this,LoginActivity.class));
             }
         });
     }
