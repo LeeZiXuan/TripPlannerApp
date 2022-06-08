@@ -16,13 +16,11 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        btn_login = (Button) findViewById(R.id.loginBtn);
+        btn_login = findViewById(R.id.loginBtn);
 
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //OpenDatabase
-                DataBaseHelper dataBaseHelper = new DataBaseHelper(LoginActivity.this);
 
                 //GoMainPage
                 openHomePage();

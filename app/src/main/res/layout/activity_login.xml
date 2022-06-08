@@ -21,7 +21,7 @@
         android:id="@+id/title1"/>
 
     <EditText
-        android:id="@+id/emailID"
+        android:id="@+id/emailID1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/title1"
@@ -37,10 +37,10 @@
         android:textSize="20dp" />
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/password1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/gmailID"
+        android:layout_below="@id/emailID1"
         android:layout_marginTop="20dp"
         android:background="@drawable/input_bg"
         android:drawableLeft="@drawable/ic_lock"
@@ -57,7 +57,7 @@
         android:id="@+id/forgotPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/password"
+        android:layout_below="@id/password1"
         android:text="Forgot Password?"
         android:textColor="@color/white"
         android:textSize="15dp"
