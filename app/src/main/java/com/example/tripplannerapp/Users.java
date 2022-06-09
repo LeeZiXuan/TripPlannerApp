@@ -1,5 +1,7 @@
 package com.example.tripplannerapp;
 
+import com.google.firebase.database.IgnoreExtraProperties;
+
 public class Users {
     String email, password, username, phoneNum;
 
@@ -7,10 +9,26 @@ public class Users {
 
     }
 
-    public Users(String username, String phoneNum, String email, String password) {
+    public Users(String email, String password,String username, String phoneNum) {
+        this.email = email;
+        this.password = password;
         this.username = username;
         this.phoneNum = phoneNum;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
         this.password = password;
     }
 
@@ -30,19 +48,5 @@ public class Users {
         this.phoneNum = phoneNum;
     }
 
-    public String getEmail() {
-        return email;
-    }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
 }
