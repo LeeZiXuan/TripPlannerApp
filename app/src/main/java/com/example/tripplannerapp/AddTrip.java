@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,6 +16,8 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -26,6 +29,11 @@ public class AddTrip extends AppCompatActivity {
     EditText destination, startDate,endDate,tripName, description;
     Button saveBtn;
     DatabaseReference databaseTrip;
+
+    FirebaseAuth fAuth;
+    FirebaseDatabase db;
+    FirebaseUser user;
+    String uid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +47,17 @@ public class AddTrip extends AppCompatActivity {
         description = findViewById(R.id.description);
         saveBtn = findViewById(R.id.saveBtn);
 
+        //Date picker
+        final Calendar calendar = Calendar.getInstance();
+        final int year = calendar.get(Calendar.YEAR);
+        final int month = calendar.get(Calendar.MONTH);
+        final int day = calendar.get(Calendar.DAY_OF_MONTH);
+
+        //database
+        fAuth = FirebaseAuth.getInstance();
+        db = FirebaseDatabase.getInstance();
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        uid = user.getUid();
         databaseTrip = FirebaseDatabase.getInstance().getReference();
 
         saveBtn.setOnClickListener(new View.OnClickListener() {
@@ -51,13 +70,29 @@ public class AddTrip extends AppCompatActivity {
         startDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showDateTimeDialog(startDate);
+                DatePickerDialog dialog = new DatePickerDialog(AddTrip.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                        month = month+1;
+                        String date = dayOfMonth+"/"+month+"/"+year;
+                        startDate.setText(date);
+                    }
+                },year,month,day);
+                dialog.show();
             }
         });
         endDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showDateTimeDialog(endDate);
+                DatePickerDialog dialog = new DatePickerDialog(AddTrip.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                        month = month+1;
+                        String date = dayOfMonth+"/"+month+"/"+year;
+                        endDate.setText(date);
+                    }
+                },year,month,day);
+                dialog.show();
             }
         });
     }
@@ -71,44 +106,16 @@ public class AddTrip extends AppCompatActivity {
         String id = databaseTrip.push().getKey();
 
         Trip trip = new Trip(des,start,end,tname,desc);
-        databaseTrip.child("Trip").child(id).setValue(trip)
+        db.getReference().child("Users").child(uid).child("Trip").child(id).setValue(trip)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(AddTrip.this,"User details inserted", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(AddTrip.this,MainActivity.class));
+                            finish();
                         }
                     }
                 });
-    }
-    private void showDateTimeDialog(final EditText date) {
-
-        final Calendar calendar = Calendar.getInstance();
-        DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
-            @Override
-            public void onDateSet(DatePicker datePicker, int year, int month, int dayOfMonth) {
-                calendar.set(Calendar.YEAR, year);
-                calendar.set(Calendar.MONTH, month);
-                calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-
-                TimePickerDialog.OnTimeSetListener timeSetListener = new TimePickerDialog.OnTimeSetListener() {
-                    @Override
-                    public void onTimeSet(TimePicker timePicker, int hourOfDay, int minute) {
-                        calendar.set(Calendar.HOUR_OF_DAY, hourOfDay);
-                        calendar.set(Calendar.MINUTE, minute);
-
-                        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yy-MM-dd HH:mm");
-
-                        date.setText(simpleDateFormat.format(calendar.getTime()));
-                    }
-                };
-
-                new TimePickerDialog(AddTrip.this, timeSetListener, calendar.get(Calendar.HOUR_OF_DAY),
-                        calendar.get(Calendar.MINUTE), false).show();
-
-            }
-        };
-        new DatePickerDialog(AddTrip.this,dateSetListener,calendar.get(Calendar.YEAR),
-                calendar.get(Calendar.MONTH),calendar.get(Calendar.DAY_OF_MONTH)).show();
     }
 }

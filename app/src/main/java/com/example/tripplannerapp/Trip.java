@@ -15,9 +15,7 @@ public class Trip {
         this.description = description;
     }
 
-    public String getDestination() {
-        return destination;
-    }
+    public String getDestination() { return destination; }
 
     public void setDestination(String destination) {
         this.destination = destination;
