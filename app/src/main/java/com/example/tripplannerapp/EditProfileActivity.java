@@ -8,15 +8,23 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class EditProfileActivity extends AppCompatActivity {
 
@@ -26,7 +34,18 @@ public class EditProfileActivity extends AppCompatActivity {
     ImageView selectedImage;
     ImageButton btn_camera;
     ImageButton btn_backToProfile;
-    Button btn_addActivity;
+    Button btn_saveProfile;
+
+    EditText et_username;
+    EditText et_email;
+    EditText et_phone;
+    EditText et_pass;
+
+    FirebaseAuth fAuth;
+    FirebaseDatabase db;
+    DatabaseReference userRef;
+    FirebaseUser user;
+    String uid;
 
 
     @Override
@@ -34,13 +53,46 @@ public class EditProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_profile);
 
+        //////////////database
+
+        fAuth = FirebaseAuth.getInstance();
+        db = FirebaseDatabase.getInstance();
+
+        /////copy
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        uid = user.getUid();
+        userRef = db.getInstance().getReference();
+        ///
+
+        et_username = findViewById(R.id.et_username);
+        et_email = findViewById(R.id.et_email);
+        et_phone = findViewById(R.id.et_phone);
+        et_pass = findViewById(R.id.et_pass);
+
         btn_backToProfile = findViewById(R.id.btn_backToProfile);
-        btn_addActivity = findViewById(R.id.btn_addActivity);
+        btn_saveProfile = findViewById(R.id.btn_saveProfile);
 
         selectedImage = findViewById(R.id.img_profile);
         btn_camera = findViewById(R.id.btn_camera);
 
-        btn_addActivity.setOnClickListener(new View.OnClickListener() {
+        /////showUserProfile
+        userRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                //String user_name = snapshot.child(uid).child("username").getValue(String.class);
+                et_username.setText(snapshot.child("Users").child(uid).child("username").getValue(String.class));
+                et_phone.setText(snapshot.child("Users").child(uid).child("phoneNum").getValue(String.class));
+                et_email.setText(snapshot.child("Users").child(uid).child("email").getValue(String.class));
+                et_pass.setText(snapshot.child("Users").child(uid).child("password").getValue(String.class));
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        btn_saveProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 /*FragmentManager fragmentManager = getSupportFragmentManager();

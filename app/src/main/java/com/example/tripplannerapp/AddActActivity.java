@@ -2,7 +2,6 @@ package com.example.tripplannerapp;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
 import android.text.TextUtils;
@@ -18,14 +17,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -75,7 +70,7 @@ public class AddActActivity extends AppCompatActivity {
         end_date_time_in =findViewById(R.id.et_activity_enddatetime);
         end_date_time_in.setInputType(InputType.TYPE_NULL);
 
-        Button btn_addActivity = findViewById(R.id.btn_addActivity);
+        Button btn_addActivity = findViewById(R.id.btn_saveProfile);
         /////////////////////////
 
         btn_addActivity.setOnClickListener(new View.OnClickListener() {

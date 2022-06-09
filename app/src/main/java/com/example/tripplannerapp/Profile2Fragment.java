@@ -46,7 +46,6 @@ public class Profile2Fragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
         //////////////database
-
         fAuth = FirebaseAuth.getInstance();
         db = FirebaseDatabase.getInstance();
 
