@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.tripplannerapp">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,6 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TripPlannerApp">
+        <activity
+            android:name=".AddPlan"
+            android:exported="false" />
         <activity
             android:name=".AddActActivity"
             android:exported="false" />
@@ -18,7 +23,8 @@
         <activity
             android:name=".Plan"
             android:exported="false"
-            android:parentActivityName=".MainActivity"/>
+            android:label=""
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".AddTrip"
             android:exported="false"
@@ -27,17 +33,18 @@
         <activity
             android:name=".SignupActivity"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.NoActionBar"/>
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".MainActivity"
             android:exported="false"
-            android:label="My Trip" />
+            android:label="My Trips" />
         <activity
             android:name=".LoginActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
