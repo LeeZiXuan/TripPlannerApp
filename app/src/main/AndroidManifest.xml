@@ -10,19 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TripPlannerApp">
         <activity
-            android:name=".AddTrip"
-            android:exported="false"
-            android:label="Add Trip"
-            android:parentActivityName=".MainActivity"/>
-        <activity
-            android:name=".SignupActivity"
+            android:name=".LoginActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="false"
-            android:label="My Trip" />
+            android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".SignupActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
