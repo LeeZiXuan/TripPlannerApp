@@ -3,21 +3,23 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:textAlignment="center"
-    android:background="@drawable/bg">
+    android:background="@drawable/bg"
+    >
 
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="534dp"
+        android:layout_height="491dp"
         android:layout_below="@+id/tv_username"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="0dp"
-        android:layout_marginTop="-23dp"
+        android:layout_marginTop="-17dp"
         android:layout_marginEnd="0dp"
         android:layout_marginBottom="0dp"
         android:background="#9CFFFFFF">
@@ -112,7 +114,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginStart="121dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="132dp"
+        android:layout_marginEnd="121dp"
         android:text="Account"
         android:textAlignment="center"
         android:textSize="24sp"
@@ -122,12 +124,12 @@
         android:id="@+id/tv_username"
         android:layout_width="175dp"
         android:layout_height="38dp"
-        android:layout_below="@+id/textView"
+        android:layout_below="@+id/img_profile"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="115dp"
-        android:layout_marginTop="135dp"
-        android:layout_marginEnd="120dp"
+        android:layout_marginStart="121dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="121dp"
         android:layout_marginBottom="32dp"
         android:text="Username"
         android:textAlignment="center"
@@ -143,6 +145,29 @@
         android:layout_marginEnd="12dp"
         android:backgroundTint="#00FFFFFF"
         app:srcCompat="@drawable/ic_baseline_edit_24" />
+
+    <ImageView
+        android:id="@+id/img_profile"
+        android:layout_width="131dp"
+        android:layout_height="124dp"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="140dp"
+        app:srcCompat="@drawable/ic_person" />
+
+    <ImageButton
+        android:id="@+id/btn_camera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/img_profile"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="266dp"
+        android:layout_marginTop="-12dp"
+        android:backgroundTint="#00FFFFFF"
+        app:srcCompat="@drawable/ic_baseline_photo_camera_24" />
 
 
 </RelativeLayout>
