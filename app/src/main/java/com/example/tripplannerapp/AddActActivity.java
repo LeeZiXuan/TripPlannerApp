@@ -32,8 +32,7 @@ import java.util.Calendar;
 
 public class AddActActivity extends AppCompatActivity {
 
-
-
+    ///copy
     FirebaseAuth fAuth;
     FirebaseDatabase db;
     DatabaseReference userRef;
