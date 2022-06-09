@@ -47,6 +47,8 @@ public class EditProfileActivity extends AppCompatActivity {
     FirebaseUser user;
     String uid;
 
+    String _USERNAME, _EMAIL, _PHONE, _PASS;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,7 +81,11 @@ public class EditProfileActivity extends AppCompatActivity {
         userRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                //String user_name = snapshot.child(uid).child("username").getValue(String.class);
+                _USERNAME = snapshot.child("Users").child(uid).child("username").getValue(String.class);
+                _PASS= snapshot.child("Users").child(uid).child("password").getValue(String.class);
+                _EMAIL= snapshot.child("Users").child(uid).child("email").getValue(String.class);
+                _PHONE= snapshot.child("Users").child(uid).child("phoneNum").getValue(String.class);
+
                 et_username.setText(snapshot.child("Users").child(uid).child("username").getValue(String.class));
                 et_phone.setText(snapshot.child("Users").child(uid).child("phoneNum").getValue(String.class));
                 et_email.setText(snapshot.child("Users").child(uid).child("email").getValue(String.class));
@@ -91,11 +97,12 @@ public class EditProfileActivity extends AppCompatActivity {
 
             }
         });
-
+  /*
         btn_saveProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*FragmentManager fragmentManager = getSupportFragmentManager();
+
+              FragmentManager fragmentManager = getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
                 Bundle bundle = new Bundle();
@@ -107,9 +114,10 @@ public class EditProfileActivity extends AppCompatActivity {
                 profile2Fragment.setArguments(bundle);
                 fragmentTransaction.replace(R.id.fragment_container,profile2Fragment).commit();
 
-                 */
+
             }
         });
+        */
 
         btn_camera.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -161,10 +169,72 @@ public class EditProfileActivity extends AppCompatActivity {
 
     }
 
-    protected void onActivityResult(int requestCode, int resultCode, Intent data){
-        if(requestCode == CAMERA_REQUEST_CODE){
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == CAMERA_REQUEST_CODE) {
             Bitmap image = (Bitmap) data.getExtras().get("data");
             selectedImage.setImageBitmap(image);
         }
     }
+
+    public void update(View view)
+    {
+        if (isNameChanged() || isEmailChanged() || isPhoneChanged() || isPasswordChanged()){
+            Toast.makeText(this,"Data has been updated", Toast.LENGTH_LONG).show();
+            backToProfile();
+        }
+        else {
+            Toast.makeText(this,"Data is same and can not be updated", Toast.LENGTH_LONG).show();
+
+        }
+
+    }
+
+    private boolean isNameChanged(){
+        if(!_USERNAME.equals(et_username.getText().toString())){
+            userRef.child("Users").child(uid).child("username").setValue(et_username.getText().toString());
+            _USERNAME = et_username.getText().toString();
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    private boolean isPasswordChanged() {
+        if(!_PASS.equals(et_pass.getText().toString())){
+            userRef.child("Users").child(uid).child("password").setValue(et_pass.getText().toString());
+            _PASS = et_pass.getText().toString();
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    private boolean isEmailChanged() {
+        if(!_EMAIL.equals(et_email.getText().toString())){
+            userRef.child("Users").child(uid).child("email").setValue(et_email.getText().toString());
+            _EMAIL = et_email.getText().toString();
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    private boolean isPhoneChanged() {
+        if(!_PHONE.equals(et_phone.getText().toString())){
+            userRef.child("Users").child(uid).child("phoneNum").setValue(et_phone.getText().toString());
+            _PHONE = et_phone.getText().toString();
+
+            Toast.makeText(this,"success", Toast.LENGTH_LONG).show();
+
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
 }

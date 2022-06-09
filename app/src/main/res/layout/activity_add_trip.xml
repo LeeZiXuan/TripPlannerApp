@@ -43,7 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/startDateText"
         android:layout_marginHorizontal="20dp"
-        android:padding="15dp"/>
+        android:padding="15dp" />
 
     <TextView
         android:id="@+id/endDateText"
@@ -63,7 +63,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/endDateText"
         android:layout_marginHorizontal="20dp"
-        android:padding="15dp"/>
+        android:padding="15dp" />
 
     <TextView
         android:id="@+id/tripNameText"
