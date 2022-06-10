@@ -1,10 +1,40 @@
 {
   "project_info": {
     "project_number": "477789742674",
+    "firebase_url": "https://tripplannerapp-c251f-default-rtdb.firebaseio.com",
     "project_id": "tripplannerapp-c251f",
     "storage_bucket": "tripplannerapp-c251f.appspot.com"
   },
   "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:477789742674:android:c70e708b0e4236a687218b",
+        "android_client_info": {
+          "package_name": "com.example.hotel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "477789742674-fq95a0ut79ia4srj3j1fd6lud300ii8f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzUbVFkpMCBMb7qa_rXdP2fBsn0gs0tRw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "477789742674-fq95a0ut79ia4srj3j1fd6lud300ii8f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
     {
       "client_info": {
         "mobilesdk_app_id": "1:477789742674:android:ab85bc30da5c8acf87218b",

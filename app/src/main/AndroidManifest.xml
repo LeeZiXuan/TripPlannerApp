@@ -21,6 +21,7 @@
         <activity
             android:name=".EditProfileActivity"
             android:exported="false" />
+
         <activity
             android:name=".Plan"
             android:exported="false"
@@ -40,6 +41,14 @@
             android:exported="false"
             android:label="My Trips" />
         <activity
+            android:name=".Room"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Hotel"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
             android:name=".LoginActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.NoActionBar">
@@ -48,7 +57,12 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
