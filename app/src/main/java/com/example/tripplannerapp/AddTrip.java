@@ -106,16 +106,16 @@ public class AddTrip extends AppCompatActivity {
         String id = databaseTrip.push().getKey();
 
         Trip trip = new Trip(des,start,end,tname,desc);
-        db.getReference().child("Users").child(uid).child("Trip").child(id).setValue(trip)
-                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if(task.isSuccessful()){
-                            Toast.makeText(AddTrip.this,"User details inserted", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(AddTrip.this,MainActivity.class));
-                            finish();
+            db.getReference().child("Users").child(uid).child("Trip").child(id).setValue(trip)
+                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (task.isSuccessful()) {
+                                Toast.makeText(AddTrip.this, "User details inserted", Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(AddTrip.this, MainActivity.class));
+                                finish();
+                            }
                         }
-                    }
-                });
+                    });
     }
 }

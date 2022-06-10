@@ -1,9 +1,11 @@
 package com.example.tripplannerapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -50,7 +52,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             nameTrip = itemView.findViewById(R.id.trip_name);
             startTrip = itemView.findViewById(R.id.trip_start);
             endTrip = itemView.findViewById(R.id.trip_end);
-            
+
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

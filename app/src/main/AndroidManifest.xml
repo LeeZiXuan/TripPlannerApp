@@ -13,7 +13,8 @@
         android:theme="@style/Theme.TripPlannerApp">
         <activity
             android:name=".AddPlan"
-            android:exported="false" />
+            android:exported="false"
+            android:label="" />
         <activity
             android:name=".AddActActivity"
             android:exported="false" />
