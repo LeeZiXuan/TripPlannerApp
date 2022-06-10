@@ -1,5 +1,6 @@
 package com.example.tripplannerapp;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,43 +9,47 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.firebase.ui.database.FirebaseRecyclerAdapter;
-import com.firebase.ui.database.FirebaseRecyclerOptions;
+import java.util.ArrayList;
 
-public class AddNotification extends FirebaseRecyclerAdapter<Trip,AddNotification.myViewHolder>{
-    /**
-     * Initialize a {@link RecyclerView.Adapter} that listens to a Firebase query. See
-     * {@link FirebaseRecyclerOptions} for configuration options.
-     *
-     * @param options
-     */
-    public AddNotification(@NonNull FirebaseRecyclerOptions<Trip> options) {
-        super(options);
-    }
+//Adapter
+public class AddNotification extends RecyclerView.Adapter<AddNotification.MyViewHolder> {
 
-    @Override
-    protected void onBindViewHolder(@NonNull myViewHolder holder, int position, @NonNull Trip model) {
-        holder.placeNotis.setText(model.getDestination());
-        holder.message.setText(model.getStartDate());
+
+    Context context;
+    ArrayList<Trip> list;
+
+    public AddNotification(Context context, ArrayList<Trip> list) {
+        this.context = context;
+        this.list = list;
 
     }
 
     @NonNull
     @Override
-    public myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.message,parent,false);
-        return null;
+    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(context).inflate(R.layout.message,parent, false);
+        return new MyViewHolder(v);
     }
 
-    class myViewHolder extends RecyclerView.ViewHolder{
+    @Override
+    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+        Trip trip = list.get(position);
+        holder.nameTrip.setText(trip.getTripName());
+        holder.startTrip.setText(trip.getStartDate());
+    }
 
-        TextView placeNotis, message;
+    @Override
+    public int getItemCount() {
+        return list.size();
+    }
 
-        public myViewHolder(@NonNull View itemView) {
+    public static class MyViewHolder extends RecyclerView.ViewHolder {
+        TextView nameTrip, startTrip;
+        public MyViewHolder(@NonNull View itemView) {
             super(itemView);
+            nameTrip = itemView.findViewById(R.id.place);
+            startTrip = itemView.findViewById(R.id.reminder);
 
-            placeNotis =(TextView) itemView.findViewById(R.id.place);
-            message =(TextView) itemView.findViewById(R.id.reminder);
 
         }
     }

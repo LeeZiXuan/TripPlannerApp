@@ -3,6 +3,7 @@
     package="com.example.tripplannerapp">
 
     <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -22,7 +23,7 @@
             android:exported="false"
             android:parentActivityName=".MainActivity"/>
         <activity
-            android:name=".RestaurantAdd"
+            android:name=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".AddTrip"
@@ -30,15 +31,12 @@
             android:label="Add Trip"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".LoginActivity"
-            android:exported="false"
-            android:theme="@style/Theme.AppCompat.NoActionBar"/>
-        <activity
             android:name=".SignupActivity"
             android:exported="false"
-            android:label="My Trip" />
+            android:theme="@style/Theme.AppCompat.NoActionBar"/>
+
         <activity
-            android:name=".notificationList"
+            android:name=".LoginActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
