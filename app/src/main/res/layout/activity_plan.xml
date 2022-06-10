@@ -23,7 +23,7 @@
         android:orientation="horizontal"
         android:layout_below="@+id/showTripName">
         <TextView
-            android:id="@+id/showStartDate"
+            android:id="@+id/tv_startDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Start Date"
@@ -38,7 +38,7 @@
             android:textColor="@color/white"
             android:layout_marginTop="10dp"/>
         <TextView
-            android:id="@+id/showEndDate"
+            android:id="@+id/tv_activityType"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="End Date"
@@ -48,7 +48,7 @@
     </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/addPlanBtn"
+        android:id="@+id/addActivityBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"

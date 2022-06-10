@@ -2,6 +2,7 @@ package com.example.tripplannerapp;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
 import android.text.TextUtils;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -42,7 +44,8 @@ public class AddActActivity extends AppCompatActivity {
     EditText start_date_time_in;
     EditText end_date_time_in;
 
-    Button btn_addActivity;
+    ImageButton btn_back;
+
 
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -60,7 +63,7 @@ public class AddActActivity extends AppCompatActivity {
 
         /////////////////////////EditText
         et_activityName = (findViewById(R.id.et_activityName));
-        et_activityType = (findViewById(R.id.et_activityType));
+        et_activityType = (findViewById(R.id.tv_activityType));
         et_activity_address = (findViewById(R.id.et_activity_address));
         et_activity_des = (findViewById(R.id.et_activity_des));
 
@@ -70,8 +73,17 @@ public class AddActActivity extends AppCompatActivity {
         end_date_time_in =findViewById(R.id.et_activity_enddatetime);
         end_date_time_in.setInputType(InputType.TYPE_NULL);
 
-        Button btn_addActivity = findViewById(R.id.btn_saveProfile);
+        Button btn_addActivity = findViewById(R.id.btn_saveAct);
+        ImageButton btn_back = findViewById(R.id.btn_back);
         /////////////////////////
+
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AddActActivity.this, ActivityListActivity.class);
+                startActivity(intent);
+            }
+        });
 
         btn_addActivity.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,6 +94,7 @@ public class AddActActivity extends AppCompatActivity {
                 String activity_des = et_activity_des.getText().toString().trim();
                 String start_date_time = start_date_time_in.getText().toString().trim();
                 String end_date_time = end_date_time_in.getText().toString().trim();
+                String id = userRef.push().getKey();
 
                 if(TextUtils.isEmpty(activityName)){
                     et_activityName.setError("Activity Name is required");
@@ -109,9 +122,9 @@ public class AddActActivity extends AppCompatActivity {
                 }
 
                 /////copy
-                Activity activity = new Activity(activityName,activityType,activity_address,activity_des,start_date_time,end_date_time);
+                Activity activity = new Activity(activityName,activityType,activity_address,activity_des,start_date_time,end_date_time, id);
 
-                db.getReference().child("Users").child(uid).child("Activity").setValue(activity).addOnCompleteListener(new OnCompleteListener<Void>() {
+                db.getReference().child("Users").child(uid).child("Activity").child(id).setValue(activity).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
                                 if(task.isSuccessful()){
@@ -120,7 +133,10 @@ public class AddActActivity extends AppCompatActivity {
                             }
                         });
 
+                backToProfile();
+
             }
+
         });
 
         start_date_time_in.setOnClickListener(new View.OnClickListener() {
@@ -156,7 +172,7 @@ public class AddActActivity extends AppCompatActivity {
                         calendar.set(Calendar.HOUR_OF_DAY,hourOfDay);
                         calendar.set(Calendar.MINUTE,minute);
 
-                        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yy-MM-dd HH:mm");
+                        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yy/MM/dd HH:mm");
 
                         date_time_in.setText(simpleDateFormat.format(calendar.getTime() ));
                     }
@@ -168,6 +184,11 @@ public class AddActActivity extends AppCompatActivity {
         };
 
         new DatePickerDialog(AddActActivity.this,dateSetListener,calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH),calendar.get(Calendar.DAY_OF_MONTH)).show();
+    }
+
+    public void backToProfile(){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 
 

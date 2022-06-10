@@ -138,7 +138,7 @@
         android:textSize="24sp" />
 
     <ImageButton
-        android:id="@+id/btn_editProfile"
+        android:id="@+id/btn_editAct"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"

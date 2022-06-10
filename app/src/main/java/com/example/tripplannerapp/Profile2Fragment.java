@@ -1,25 +1,16 @@
 package com.example.tripplannerapp;
 
-import android.Manifest;
-import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -60,13 +51,12 @@ public class Profile2Fragment extends Fragment {
         TextView tv_email = (TextView) view.findViewById(R.id.tv_email);
         TextView tv_pass = (TextView) view.findViewById(R.id.tv_pass);
 
-        ImageButton btn_editProfile = (ImageButton) view.findViewById(R.id.btn_editProfile);
+        ImageButton btn_editProfile = (ImageButton) view.findViewById(R.id.btn_editAct);
         ImageButton btn_addAct = (ImageButton) view.findViewById(R.id.btn_addAct);
 
         userRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                //String user_name = snapshot.child(uid).child("username").getValue(String.class);
                 tv_username.setText(snapshot.child("Users").child(uid).child("username").getValue(String.class));
                 tv_phone.setText(snapshot.child("Users").child(uid).child("phoneNum").getValue(String.class));
                 tv_email.setText(snapshot.child("Users").child(uid).child("email").getValue(String.class));
@@ -82,7 +72,7 @@ public class Profile2Fragment extends Fragment {
         btn_addAct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(),AddActActivity.class);
+                Intent intent = new Intent(getActivity(),ActivityListActivity.class);
                 intent.putExtra("resId", R.drawable.ic_person);
                 startActivity(intent);
             }

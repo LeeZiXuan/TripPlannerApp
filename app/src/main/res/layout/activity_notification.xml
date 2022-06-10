@@ -14,7 +14,7 @@
         android:src="@drawable/bg" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/btn_back"
         android:layout_width="74dp"
         android:layout_height="59dp"
 

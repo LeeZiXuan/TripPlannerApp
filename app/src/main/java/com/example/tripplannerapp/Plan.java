@@ -18,15 +18,15 @@ public class Plan extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plan);
 
-        addPlanBtn = findViewById(R.id.addPlanBtn);
+        addPlanBtn = findViewById(R.id.addActivityBtn);
 
         String tname = getIntent().getStringExtra("Trip name");
         String sdate = getIntent().getStringExtra("Start Date");
         String edate = getIntent().getStringExtra("End Date");
 
         TextView showTripNameTxt = findViewById(R.id.showTripName);
-        TextView showStartDateTxt = findViewById(R.id.showStartDate);
-        TextView showEndDateTxt = findViewById(R.id.showEndDate);
+        TextView showStartDateTxt = findViewById(R.id.tv_startDate);
+        TextView showEndDateTxt = findViewById(R.id.tv_activityType);
 
         showTripNameTxt.setText(tname);
         showStartDateTxt.setText(sdate);
