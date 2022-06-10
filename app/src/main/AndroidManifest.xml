@@ -12,6 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TripPlannerApp">
         <activity
+            android:name=".EditActActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityListActivity"
+            android:exported="false" />
+        <activity
             android:name=".AddPlan"
             android:exported="false"
             android:label="" />
