@@ -18,8 +18,6 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.orhanobut.dialogplus.DialogPlus;
 import com.orhanobut.dialogplus.ViewHolder;
@@ -63,7 +61,7 @@ public class MainAdapter extends FirebaseRecyclerAdapter<MainModel,MainAdapter.m
                 EditText orderDate = view.findViewById((R.id.txtOrderDate));
                 EditText roomType = view.findViewById((R.id.txtRoomType));
                 EditText quantity = view.findViewById((R.id.txtQuantity));
-                Button btnUpdate =view.findViewById(R.id.btnUpdate);
+                Button btnUpdate =view.findViewById(R.id.btnadd);
 
                 orderDate.setText(model.getOrderDate());
                 roomType.setText(model.getRoomType());
@@ -100,6 +98,30 @@ public class MainAdapter extends FirebaseRecyclerAdapter<MainModel,MainAdapter.m
                 });
             }
         });
+
+        holder.btn_delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder=new AlertDialog.Builder(holder.hotelName.getContext());
+                builder.setTitle("ARE you sure?");
+                builder.setMessage("deleted data cannot undo");
+                builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        FirebaseDatabase.getInstance().getReference().child("Hotels").child(getRef(position).getKey()).removeValue();
+                    }
+                });
+
+                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Toast.makeText(holder.hotelName.getContext(), "Cancelled",Toast.LENGTH_SHORT).show();
+                    }
+                });
+                builder.show();
+            }
+
+            });
 
 
     }

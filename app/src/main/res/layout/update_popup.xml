@@ -4,14 +4,15 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     >
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:text="Update Booking Details"
         android:background="@color/purple_500"
-        android:textSize="25dp"
         android:gravity="center"
-        android:textColor="#FFF"/>
+        android:text="@string/Update_Booking_Details"
+        android:textColor="#FFF"
+        android:textSize="25sp" />
 
     <TextView
         android:id="@+id/orderDate"
@@ -20,11 +21,14 @@
         android:layout_marginTop="20dp"
         android:layout_marginBottom="5dp"
         android:gravity="center"
-        android:text="OrderDate"
+        android:text="@string/oDate"
         android:textColor="@color/black"
-        android:textSize="20dp" />
+        android:textSize="20sp" />
 
     <EditText
+        android:inputType="date"
+        android:importantForAutofill="no"
+        android:hint="@string/order_date"
         android:id="@+id/txtOrderDate"
         android:layout_width="match_parent"
         android:layout_height="35dp"
@@ -32,7 +36,7 @@
         android:layout_marginRight="10dp"
         android:background="@drawable/rounded"
         android:gravity="center"
-        android:text="Enter updated order date"
+        android:text="@string/order_date"
         android:textColor="#808080" />
 
     <TextView
@@ -42,11 +46,14 @@
         android:layout_marginTop="20dp"
         android:layout_marginBottom="5dp"
         android:gravity="center"
-        android:text="Room Type"
+        android:text="@string/rType"
         android:textColor="@color/black"
-        android:textSize="20dp" />
+        android:textSize="20sp" />
 
     <EditText
+        android:inputType="text"
+        android:importantForAutofill="no"
+        android:hint="@string/updated_rtype"
         android:id="@+id/txtRoomType"
         android:layout_width="match_parent"
         android:layout_height="35dp"
@@ -54,7 +61,7 @@
         android:layout_marginRight="10dp"
         android:background="@drawable/rounded"
         android:gravity="center"
-        android:text="Enter updated room type"
+        android:text="@string/updated_rtype"
         android:textColor="#808080" />
 
     <TextView
@@ -64,11 +71,14 @@
         android:layout_marginTop="20dp"
         android:layout_marginBottom="5dp"
         android:gravity="center"
-        android:text="Quantity"
+        android:text="@string/quantity"
         android:textColor="@color/black"
-        android:textSize="20dp" />
+        android:textSize="20sp" />
 
     <EditText
+        android:inputType="number"
+        android:importantForAutofill="no"
+        android:hint="@string/updated_quantity"
         android:id="@+id/txtQuantity"
         android:layout_width="match_parent"
         android:layout_height="35dp"
@@ -76,19 +86,19 @@
         android:layout_marginRight="10dp"
         android:background="@drawable/rounded"
         android:gravity="center"
-        android:text="Enter updated quantity of rooms"
+        android:text="@string/updated_quantity"
         android:textColor="#808080" />
 
     <Button
-        android:id="@+id/btnUpdate"
+        android:id="@+id/btnadd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="130dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="130dp"
         android:background="@drawable/rounded"
-        android:text="Update"
+        android:text="@string/btn_update"
         android:textAllCaps="false"
         android:textColor="@color/purple_500"
-        android:textSize="21dp" />
+        android:textSize="21sp" />
 </LinearLayout>
