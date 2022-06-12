@@ -1,7 +1,6 @@
 package com.example.tripplannerapp;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,7 +34,7 @@ public class MainAdapter extends FirebaseRecyclerAdapter<MainModel,MainAdapter.m
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull myViewHolder holder, final int position, @NonNull MainModel model) {
+    protected void onBindViewHolder(@NonNull myViewHolder holder, @SuppressLint("RecyclerView") int position, @NonNull MainModel model) {
         holder.hotelName.setText(model.getHotelName());
         holder.orderDate.setText(model.getOrderDate());
         holder.quantity.setText(model.getQuantity());

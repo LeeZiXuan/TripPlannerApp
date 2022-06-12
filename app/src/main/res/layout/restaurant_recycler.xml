@@ -7,7 +7,7 @@
     android:textAlignment="center">
 
     <TextView
-        android:id="@+id/myActivity"
+        android:id="@+id/restaurant_main"
         android:layout_width="221dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -16,17 +16,31 @@
         android:layout_marginStart="91dp"
         android:layout_marginTop="35dp"
         android:layout_marginEnd="99dp"
-        android:text="My Notifications"
+        android:text="Restaurant List"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/notificationList"
+        android:id="@+id/restaurantList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/myActivity" />
+        android:layout_below="@+id/restaurant_main" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addActivityBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:backgroundTint="#FFFFFF"
+        app:srcCompat="@drawable/ic_add" />
+
 
 
 

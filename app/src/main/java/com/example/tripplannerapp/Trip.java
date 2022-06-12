@@ -1,15 +1,23 @@
 package com.example.tripplannerapp;
 
 public class Trip {
-    String destination, startDate, endDate, tripName, description;
+
+    String destination;
+    String startDate;
+    String endDate;
+    String tripName;
+    String description;
+
 
     public Trip() {
 
     }
 
-    public Trip(String destination, String startDate, String endDate, String tripName, String description) {
+
+    public Trip(String destination, String startDay, String endDate, String tripName, String description) {
         this.destination = destination;
-        this.startDate = startDate;
+        this.startDate = startDay;
+
         this.endDate = endDate;
         this.tripName = tripName;
         this.description = description;
@@ -28,6 +36,8 @@ public class Trip {
     public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
+
+
 
     public String getEndDate() {
         return endDate;

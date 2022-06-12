@@ -4,25 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ActivityDetailsActivity"
+    tools:context=".RestaurantDetailsActivity"
     android:padding="20dp"
     android:background="@drawable/bg">
 
     <TextView
-        android:id="@+id/tv_activityName"
+        android:id="@+id/restaurant_name"
         android:layout_width="288dp"
         android:layout_height="wrap_content"
-        android:text="Activity name"
+        android:text="Restaurant name"
         android:textColor="@color/white"
         android:textSize="30dp"
         android:textStyle="bold" />
 
     <ImageButton
-        android:id="@+id/btn_editAct"
+        android:id="@+id/btn_edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_toEndOf="@+id/tv_activityName"
+        android:layout_toEndOf="@+id/restaurant_name"
         android:backgroundTint="#00FFFFFF"
         app:srcCompat="@drawable/ic_baseline_edit_24" />
 
@@ -30,9 +30,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_below="@+id/tv_activityName">
+        android:layout_below="@+id/restaurant_name">
         <TextView
-            android:id="@+id/tv_startDate"
+            android:id="@+id/startDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Start Date"
@@ -47,7 +47,7 @@
             android:textColor="@color/white"
             android:layout_marginTop="10dp"/>
         <TextView
-            android:id="@+id/tv_EndDate"
+            android:id="@+id/EndDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="End Date"
@@ -63,7 +63,7 @@
         android:layout_height="711dp">
 
         <TextView
-            android:id="@+id/tv_activityType"
+            android:id="@+id/address"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:layout_below="@+id/tv_label_activityType"
@@ -73,37 +73,7 @@
             android:layout_marginTop="5dp"
             android:layout_marginEnd="0dp"
             android:background="#B7FFFFFF"
-            android:text="ActivityType"
-            android:textColor="@color/blue_1"
-            android:textSize="20dp" />
-
-        <TextView
-            android:id="@+id/tv_activityAddress"
-            android:layout_width="match_parent"
-            android:layout_height="73dp"
-            android:layout_below="@+id/tv_label_activityAddress"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="0dp"
-            android:background="#B7FFFFFF"
-            android:text="ActivityAdd"
-            android:textColor="@color/blue_1"
-            android:textSize="20dp" />
-
-        <TextView
-            android:id="@+id/tv_activityDes"
-            android:layout_width="match_parent"
-            android:layout_height="112dp"
-            android:layout_below="@+id/tv_label_activityDes"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="0dp"
-            android:background="#B7FFFFFF"
-            android:text="ActivityDes"
+            android:text="Restaurant Address"
             android:textColor="@color/blue_1"
             android:textSize="20dp" />
 
@@ -117,37 +87,7 @@
             android:layout_marginStart="0dp"
             android:layout_marginTop="130dp"
             android:layout_marginEnd="0dp"
-            android:text="Activity Type"
-            android:textColor="@color/white"
-            android:textSize="24sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/tv_label_activityAddress"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_activityType"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginEnd="0dp"
-            android:text="Activity Address"
-            android:textColor="@color/white"
-            android:textSize="24sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/tv_label_activityDes"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_activityAddress"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginEnd="0dp"
-            android:text="Activity Description"
+            android:text="Restaurant Address"
             android:textColor="@color/white"
             android:textSize="24sp"
             android:textStyle="bold" />
@@ -156,7 +96,7 @@
     </RelativeLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/addActivityBtn"
+        android:id="@+id/btn_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
