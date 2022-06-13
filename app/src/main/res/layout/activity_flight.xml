@@ -80,7 +80,7 @@
                             android:textSize="14sp" />
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/inputNama"
+                            android:id="@+id/inputName"
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
                             android:backgroundTint="@color/blue_1"
@@ -108,7 +108,7 @@
                             android:layout_weight="1">
 
                             <TextView
-                                android:id="@+id/tvBerangkat"
+                                android:id="@+id/tvDeparture"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Departure"
@@ -119,7 +119,7 @@
                                 android:id="@+id/Departure"
                                 android:layout_width="match_parent"
                                 android:layout_height="48dp"
-                                android:layout_below="@+id/tvBerangkat"
+                                android:layout_below="@+id/tvDeparture"
                                 android:layout_marginTop="10dp"
                                 android:background="@drawable/spinner_background"
                                 android:spinnerMode="dropdown" />
@@ -127,7 +127,7 @@
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_below="@+id/tvBerangkat"
+                                android:layout_below="@+id/tvDeparture"
                                 android:layout_alignParentEnd="true"
                                 android:layout_centerVertical="true"
                                 android:layout_gravity="center"
@@ -151,7 +151,7 @@
                             android:layout_weight="1">
 
                             <TextView
-                                android:id="@+id/tvTujuan"
+                                android:id="@+id/tvDestination"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Destination"
@@ -162,7 +162,7 @@
                                 android:id="@+id/Destination"
                                 android:layout_width="match_parent"
                                 android:layout_height="48dp"
-                                android:layout_below="@+id/tvTujuan"
+                                android:layout_below="@+id/tvDestination"
                                 android:layout_marginTop="7dp"
                                 android:background="@drawable/spinner_background"
                                 android:spinnerMode="dropdown" />
@@ -170,7 +170,7 @@
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_below="@+id/tvTujuan"
+                                android:layout_below="@+id/tvDestination"
                                 android:layout_alignParentEnd="true"
                                 android:layout_centerVertical="true"
                                 android:layout_gravity="center"
@@ -293,7 +293,7 @@
                         android:layout_marginEnd="20dp">
 
                         <TextView
-                            android:id="@+id/tvKelas"
+                            android:id="@+id/tvClass"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Class"
@@ -304,7 +304,7 @@
                             android:id="@+id/Class"
                             android:layout_width="match_parent"
                             android:layout_height="48dp"
-                            android:layout_below="@+id/tvKelas"
+                            android:layout_below="@+id/tvClass"
                             android:layout_marginTop="10dp"
                             android:background="@drawable/spinner_background"
                             android:spinnerMode="dropdown" />
@@ -312,7 +312,7 @@
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/tvKelas"
+                            android:layout_below="@+id/tvClass"
                             android:layout_alignParentEnd="true"
                             android:layout_centerVertical="true"
                             android:layout_gravity="center"

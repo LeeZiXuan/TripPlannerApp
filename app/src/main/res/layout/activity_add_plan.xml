@@ -222,10 +222,10 @@
                     </LinearLayout>
 
                     <ImageView
-                        android:layout_width="140dp"
-                        android:layout_height="147dp"
+                        android:layout_width="141dp"
+                        android:layout_height="129dp"
                         android:layout_gravity="end|center"
-                        android:src="@drawable/ic_train"
+                        android:src="@drawable/Restaurant"
                         app:tint="@color/white" />
 
                 </androidx.cardview.widget.CardView>
