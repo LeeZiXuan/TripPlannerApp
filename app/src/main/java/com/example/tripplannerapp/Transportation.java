@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -22,13 +23,14 @@ import java.util.ArrayList;
 public class Transportation extends AppCompatActivity {
 
     GridView gridView;
+    ImageButton bulb;
     String[] transportNames = {"Bus", "Plane", "MRT","Railway", "Bike","Motorcycle","Ship"};
     int[] transImages ={R.drawable.bus,R.drawable.plane,R.drawable.mrt,R.drawable.railway,R.drawable.bike,R.drawable.motorcycle,R.drawable.ship};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_transportation);
-
+        bulb=(ImageButton) findViewById(R.id.bulb);
         gridView =findViewById(R.id.gridview);
         CustomAdapter customAdapter = new CustomAdapter();
         gridView.setAdapter(customAdapter);
@@ -40,6 +42,15 @@ public class Transportation extends AppCompatActivity {
                 intent.putExtra("name", transportNames[i]);
                 intent.putExtra("image",transImages[i]);
                 startActivity(intent);
+            }
+        });
+
+        bulb.setOnClickListener(new View.OnClickListener() {
+            //explicit intent
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(Transportation.this,LightSensorActivity.class);
+                startActivity(i);
             }
         });
     }
