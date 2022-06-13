@@ -1,10 +1,8 @@
 package com.example.tripplannerapp;
 
 public class MainModel {
-    String hotelName;
-    String orderDate;
-    String rImg;
-    String roomType;
+    String hotelName, orderDate,rImg, roomType;
+    String price;
 
     public String getPrice() {
         return price;
@@ -22,8 +20,8 @@ public class MainModel {
         this.quantity = quantity;
     }
 
-    String price;
     String quantity;
+
 
 
     MainModel(){

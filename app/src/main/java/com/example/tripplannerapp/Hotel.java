@@ -5,16 +5,19 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-
+import android.widget.EditText;
+import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Hotel extends AppCompatActivity {
 
     Button clk;
+    ImageButton bulb;
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hotel);
+        bulb=(ImageButton) findViewById(R.id.bulb);
         clk=(Button) findViewById(R.id.btn_booking);
         Button btn = findViewById(R.id.btn_review);
         btn.setOnClickListener(new View.OnClickListener() {
@@ -33,6 +36,15 @@ public class Hotel extends AppCompatActivity {
             public void onClick(View view) {
                 Intent jumppage = new Intent(Hotel.this,Room.class);
                 startActivity(jumppage);
+            }
+        });
+
+        bulb.setOnClickListener(new View.OnClickListener() {
+            //explicit intent
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(Hotel.this,LightSensorActivity.class);
+                startActivity(i);
             }
         });
     }

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    layout_width="200dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ADD8E6">
+
+    <GridView
+        android:id="@+id/gridview"
+        android:layout_width="0dp"
+        android:layout_height="625dp"
+        android:background="#ADD8E6"
+        android:columnWidth="90dp"
+        android:gravity="center"
+        android:horizontalSpacing="100dp"
+        android:numColumns="1"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_editor_absoluteX="0dp">
+
+
+    </GridView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

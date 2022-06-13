@@ -27,7 +27,7 @@
       android:textSize="20sp" />
 
   <EditText
-      android:id="@+id/txtHotelName"
+      android:id="@+id/txtTName"
       android:layout_width="match_parent"
       android:layout_height="35dp"
       android:layout_marginLeft="10dp"
