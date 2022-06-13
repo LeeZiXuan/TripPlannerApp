@@ -3,16 +3,47 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/TripPlannerApp/app/src/main/res/drawable/bg_home_wave.xml" value="0.2555" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/TripPlannerApp/app/src/main/res/drawable/ic_add.xml" value="0.2555" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/TripPlannerApp/app/src/main/res/drawable/ic_back.xml" value="0.2555" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/TripPlannerApp/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.2555" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/TripPlannerApp/app/src/main/res/drawable/ic_baseline_add_circle_24.xml" value="0.2555" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/TripPlannerApp/app/src/main/res/drawable/ic_baseline_arrow_back_ios_24.xml" value="0.2555" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/TripPlannerApp/app/src/main/res/drawable/ic_baseline_date_range_24.xml" value="0.2555" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/TripPlannerApp/app/src/main/res/drawable/ic_baseline_edit_24.xml" value="0.2555" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/TripPlannerApp/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.2555" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/TripPlannerApp/app/src/main/res/drawable/ic_baseline_location_on_24.xml" value="0.2555" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/TripPlannerApp/app/src/main/res/drawable/ic_co_present.xml" value="0.2555" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/TripPlannerApp/app/src/main/res/drawable/ic_compare.xml" value="0.2555" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/TripPlannerApp/app/src/main/res/drawable/ic_minus.xml" value="0.2555" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/TripPlannerApp/app/src/main/res/drawable/ic_spinner.xml" value="0.2555" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/TripPlannerApp/app/src/main/res/drawable/spinner_background.xml" value="0.2555" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/TripPlannerApp/app/src/main/res/layout/activity_activity_details.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/TripPlannerApp/app/src/main/res/layout/activity_activity_edit.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/TripPlannerApp/app/src/main/res/layout/activity_activityentry.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/TripPlannerApp/app/src/main/res/layout/activity_add_activity.xml" value="0.1546875" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/TripPlannerApp/app/src/main/res/layout/activity_add_plan.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/TripPlannerApp/app/src/main/res/layout/activity_add_trip.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/TripPlannerApp/app/src/main/res/layout/activity_edit_activity.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/TripPlannerApp/app/src/main/res/layout/activity_edit_profile.xml" value="0.1546875" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/TripPlannerApp/app/src/main/res/layout/activity_flight.xml" value="0.264" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/TripPlannerApp/app/src/main/res/layout/activity_hotel.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/TripPlannerApp/app/src/main/res/layout/activity_login.xml" value="0.2" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/TripPlannerApp/app/src/main/res/layout/activity_main.xml" value="0.4" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/TripPlannerApp/app/src/main/res/layout/activity_main_page_activity.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/TripPlannerApp/app/src/main/res/layout/activity_notification.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/TripPlannerApp/app/src/main/res/layout/activity_plan.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/TripPlannerApp/app/src/main/res/layout/activity_restaurant.xml" value="0.2" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/TripPlannerApp/app/src/main/res/layout/activity_room.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/TripPlannerApp/app/src/main/res/layout/activity_signup.xml" value="0.1546875" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/TripPlannerApp/app/src/main/res/layout/fragment_home.xml" value="0.1546875" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/TripPlannerApp/app/src/main/res/layout/fragment_note.xml" value="0.1546875" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/TripPlannerApp/app/src/main/res/layout/fragment_profile.xml" value="0.1546875" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/TripPlannerApp/app/src/main/res/layout/main_item.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/TripPlannerApp/app/src/main/res/layout/message.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/TripPlannerApp/app/src/main/res/layout/testing.xml" value="0.10885416666666667" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/TripPlannerApp/app/src/main/res/layout/tripentry.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/TripPlannerApp/app/src/main/res/layout/update_popup.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/User/AndroidStudioProjects/TripPlannerApp/app/src/main/res/drawable/ic_baseline_photo_camera_24.xml" value="0.144" />
         <entry key="..\:/Users/User/AndroidStudioProjects/TripPlannerApp/app/src/main/res/drawable/ic_person.xml" value="0.1405" />
         <entry key="..\:/Users/User/AndroidStudioProjects/TripPlannerApp/app/src/main/res/drawable/login_bg.xml" value="0.144" />
