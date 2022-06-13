@@ -2,7 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.tripplannerapp">
 
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -13,23 +15,32 @@
         android:theme="@style/Theme.TripPlannerApp">
         <activity
             android:name=".EditActActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Edit Activity Details"
+            android:parentActivityName=".ActivityListActivity"/>
         <activity
             android:name=".Hotel"
             android:exported="false" />
         <activity
             android:name=".ActivityDetailsActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Activity Details"
+            android:parentActivityName=".ActivityListActivity" />
         <activity
             android:name=".AddPlan"
             android:exported="false"
             android:label="" />
         <activity
-            android:name=".Restaurant_Edit"
+            android:name=".RestaurantList"
             android:exported="false" />
         <activity
             android:name=".EditProfileActivity"
             android:exported="false" />
+        <activity
+            android:name=".AddActActivity"
+            android:exported="false"
+            android:label="Add Activity"
+            android:parentActivityName=".ActivityListActivity"/>
         <activity
             android:name=".Plan"
             android:exported="false"
@@ -53,7 +64,7 @@
             android:exported="false"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".Restaurant_Edit"
             android:exported="false"
             android:parentActivityName=".MainActivity" />
         <activity
@@ -61,16 +72,16 @@
             android:exported="false"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".RestaurantList"
+            android:name=".ActivityListActivity"
             android:exported="false"
-             />
+            android:parentActivityName=".MainActivity" />
 
         <activity
             android:name=".RestaurantAdd"
             android:exported="false"
             />
         <activity
-            android:name=".ActivityListActivity"
+            android:name=".LoginActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
@@ -79,6 +90,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.android.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"></meta-data>
+        </provider>
+
 
         <meta-data
             android:name="preloaded_fonts"

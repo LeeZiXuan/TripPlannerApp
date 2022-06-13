@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class R_Adapter  extends RecyclerView.Adapter<R_Adapter.MyViewHolder> {
+public class R_Adapter extends RecyclerView.Adapter<R_Adapter.MyViewHolder> {
 
     private final R_RecyclerViewInterface r_recyclerViewInterface;
     Context context;
@@ -23,15 +23,34 @@ public class R_Adapter  extends RecyclerView.Adapter<R_Adapter.MyViewHolder> {
         this.r_recyclerViewInterface = r_recyclerViewInterface;
     }
 
-    @NonNull
+    /*@NonNull
     @Override
-    public R_Adapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(context).inflate(R.layout.restaurant_view,parent, false);
         return new R_Adapter.MyViewHolder(v, r_recyclerViewInterface);
     }
 
+     */
+
+    @NonNull
     @Override
+    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(context).inflate(R.layout.restaurant_view,parent, false);
+        return new MyViewHolder(v, r_recyclerViewInterface);
+    }
+
+    /*@Override
     public void onBindViewHolder(@NonNull R_Adapter.MyViewHolder holder, int position) {
+        RestaurantData R_data = R_list.get(position);
+        holder.restaurant_name.setText(R_data.getR_id());
+        holder.R_start.setText(R_data.getR_startDate());
+        holder.R_end.setText(R_data.getR_endDate());
+    }
+
+     */
+
+    @Override
+    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         RestaurantData R_data = R_list.get(position);
         holder.restaurant_name.setText(R_data.getR_id());
         holder.R_start.setText(R_data.getR_startDate());

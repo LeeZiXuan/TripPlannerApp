@@ -107,13 +107,14 @@ public class Restaurant_Edit extends AppCompatActivity {
 
                 if (isActNameChanged() || isActStartDateChanged() || isActEndDateChanged() || isActAddressChanged()){
                     Toast.makeText(Restaurant_Edit.this,"Data has been updated", Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(Restaurant_Edit.this, RestaurantList.class);
+                    startActivity(intent);
                 }
                 else {
                     Toast.makeText(Restaurant_Edit.this,"Data is same and can not be updated", Toast.LENGTH_LONG).show();
 
                 }
-                Intent intent = new Intent(Restaurant_Edit.this, RestaurantList.class);
-                startActivity(intent);
+
 
             }
 
