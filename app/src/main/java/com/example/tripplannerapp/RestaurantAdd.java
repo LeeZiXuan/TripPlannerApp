@@ -2,6 +2,7 @@ package com.example.tripplannerapp;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,6 +16,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -22,6 +25,13 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class RestaurantAdd extends AppCompatActivity {
+
+    ///copy
+    FirebaseAuth fAuth;
+    FirebaseDatabase db;
+    DatabaseReference userRef;
+    FirebaseUser user;
+    String uid;
 
     EditText R_name, R_startDate,R_endDate,R_address;
     Button addBtn;
@@ -41,10 +51,20 @@ public class RestaurantAdd extends AppCompatActivity {
 
         R_database = FirebaseDatabase.getInstance().getReference();
 
+        /////copy
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        uid = user.getUid();
+        userRef = db.getInstance().getReference();
+
+
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 InsertData();
+                Intent intent = new Intent(RestaurantAdd.this,RestaurantList.class);
+                startActivity(intent);
+
             }
         });
 
@@ -70,8 +90,8 @@ public class RestaurantAdd extends AppCompatActivity {
 
         String id = R_database.push().getKey();
 
-        RestaurantData R_data = new RestaurantData(name,startDate,endDate,address);
-        R_database.child("RestaurantData").child(id).setValue(R_data)
+        RestaurantData R_data = new RestaurantData(name,startDate,endDate,address,id);
+        R_database.child("Users").child(uid).child("RestaurantData").child(id).setValue(R_data)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
@@ -81,6 +101,8 @@ public class RestaurantAdd extends AppCompatActivity {
                     }
                 });
     }
+
+
     private void showDateTimeDialog(final EditText date) {
 
         final Calendar calendar = Calendar.getInstance();

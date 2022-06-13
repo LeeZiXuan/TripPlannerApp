@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 //Adapter
 public class AddNotification extends RecyclerView.Adapter<AddNotification.MyViewHolder> {
@@ -17,6 +18,14 @@ public class AddNotification extends RecyclerView.Adapter<AddNotification.MyView
 
     Context context;
     ArrayList<Trip> list;
+
+    //get Current Date
+    Calendar calendar = Calendar.getInstance();
+
+    //get current date
+    int curYear = calendar.get(Calendar.YEAR);
+    int curMonth = calendar.get(Calendar.MONTH);
+    int curDay = calendar.get(Calendar.DAY_OF_MONTH);
 
     public AddNotification(Context context, ArrayList<Trip> list) {
         this.context = context;
@@ -34,8 +43,12 @@ public class AddNotification extends RecyclerView.Adapter<AddNotification.MyView
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         Trip trip = list.get(position);
-        holder.nameTrip.setText(trip.getTripName());
-        holder.startTrip.setText(trip.getStartDate());
+
+
+            holder.nameTrip.setText(trip.getTripName());
+            holder.startTrip.setText(trip.getStartDate());
+
+
     }
 
     @Override
@@ -45,8 +58,10 @@ public class AddNotification extends RecyclerView.Adapter<AddNotification.MyView
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         TextView nameTrip, startTrip;
+
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
+
             nameTrip = itemView.findViewById(R.id.place);
             startTrip = itemView.findViewById(R.id.reminder);
 

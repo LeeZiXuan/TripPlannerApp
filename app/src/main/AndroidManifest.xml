@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.tripplannerapp">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -15,22 +15,21 @@
             android:name=".EditActActivity"
             android:exported="false" />
         <activity
-            android:name=".ActivityDetailsActivity"
+            android:name=".Hotel"
             android:exported="false" />
         <activity
-            android:name=".ActivityListActivity"
+            android:name=".ActivityDetailsActivity"
             android:exported="false" />
         <activity
             android:name=".AddPlan"
             android:exported="false"
             android:label="" />
         <activity
-            android:name=".AddActActivity"
+            android:name=".Restaurant_Edit"
             android:exported="false" />
         <activity
             android:name=".EditProfileActivity"
             android:exported="false" />
-
         <activity
             android:name=".Plan"
             android:exported="false"
@@ -54,11 +53,24 @@
             android:exported="false"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".Hotel"
+            android:name=".LoginActivity"
             android:exported="false"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".RestaurantDetailsActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".RestaurantList"
+            android:exported="false"
+             />
+
+        <activity
+            android:name=".RestaurantAdd"
+            android:exported="false"
+            />
+        <activity
+            android:name=".ActivityListActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
@@ -66,7 +78,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
 
         <meta-data
