@@ -228,6 +228,7 @@
                         android:src="@drawable/Restaurant"
                         app:tint="@color/white" />
 
+
                 </androidx.cardview.widget.CardView>
 
             </LinearLayout>

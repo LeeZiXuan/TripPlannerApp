@@ -100,7 +100,6 @@ public class EditProfileActivity extends AppCompatActivity {
         et_phone = findViewById(R.id.et_phone);
         et_pass = findViewById(R.id.et_pass);
 
-        btn_backToProfile = findViewById(R.id.btn_backToProfile);
         btn_saveProfile = findViewById(R.id.btn_saveAct);
 
         selectedImage = findViewById(R.id.img_profile);
@@ -151,19 +150,10 @@ public class EditProfileActivity extends AppCompatActivity {
             }
         });
 
-        btn_backToProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                backToProfile();
-            }
-        });
 
     }
 
-    public void backToProfile(){
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-    }
+
 
     private void askCameraPermissions(){
         if(ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){

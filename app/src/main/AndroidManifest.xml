@@ -35,7 +35,9 @@
             android:exported="false" />
         <activity
             android:name=".EditProfileActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Edit Profile"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".AddActActivity"
             android:exported="false"
