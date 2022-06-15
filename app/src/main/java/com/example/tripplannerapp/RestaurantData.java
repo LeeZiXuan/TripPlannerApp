@@ -7,6 +7,10 @@ public class RestaurantData {
     String R_address;
     String R_dataID;
 
+    public RestaurantData(){
+
+    }
+
     public RestaurantData(String r_id, String r_startDate, String r_endDate, String r_address, String r_dataID) {
         R_id = r_id;
         R_startDate = r_startDate;

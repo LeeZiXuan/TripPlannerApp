@@ -3,11 +3,13 @@ package com.example.tripplannerapp;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -34,27 +36,51 @@ public class RestaurantAdd extends AppCompatActivity {
     String uid;
 
     EditText R_name, R_startDate,R_endDate,R_address;
-    Button addBtn;
-    DatabaseReference R_database;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restaurant);
 
-        R_name = findViewById(R.id.R_name);
-        R_startDate = findViewById(R.id.R_startDate);
-        R_endDate = findViewById(R.id.R_endDate);
-        R_address = findViewById(R.id.R_address);
+        //////////////database
 
-        addBtn = findViewById(R.id.btn_addRestaurant);
-
-        R_database = FirebaseDatabase.getInstance().getReference();
+        fAuth = FirebaseAuth.getInstance();
+        db = FirebaseDatabase.getInstance();
 
         /////copy
         user = FirebaseAuth.getInstance().getCurrentUser();
         uid = user.getUid();
         userRef = db.getInstance().getReference();
+
+        R_name = findViewById(R.id.R_name);
+        R_startDate = findViewById(R.id.R_startDate);
+        R_endDate = findViewById(R.id.R_endDate);
+        R_address = findViewById(R.id.R_address);
+
+        Button addBtn = findViewById(R.id.btn_addRestaurant);
+        ImageButton btn_back = findViewById(R.id.btn_back);
+        Button R_suggest = findViewById(R.id.buttonSuggest);
+
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(RestaurantAdd.this, RestaurantList.class);
+                startActivity(intent);
+            }
+        });
+
+        R_suggest.setOnClickListener(new View.OnClickListener() {
+            //implicit intent
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(Intent.ACTION_VIEW,
+                        Uri.parse("https://www.tripadvisor.com.my/Restaurants"));
+                startActivity(i);
+            }
+        });
+
+
 
 
         addBtn.setOnClickListener(new View.OnClickListener() {
@@ -88,10 +114,10 @@ public class RestaurantAdd extends AppCompatActivity {
         String endDate = R_endDate.getText().toString();
         String address = R_address.getText().toString();
 
-        String id = R_database.push().getKey();
+        String id = userRef.push().getKey();
 
         RestaurantData R_data = new RestaurantData(name,startDate,endDate,address,id);
-        R_database.child("Users").child(uid).child("RestaurantData").child(id).setValue(R_data)
+        userRef.child("Users").child(uid).child("RestaurantData").child(id).setValue(R_data)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {

@@ -102,6 +102,7 @@ public class Restaurant_Edit extends AppCompatActivity {
 
         btn_save.setOnClickListener(new View.OnClickListener() {
 
+
             @Override
             public void onClick(View view) {
 
@@ -118,6 +119,17 @@ public class Restaurant_Edit extends AppCompatActivity {
             }
 
         });
+
+        btn_delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                deleteRestaurantData(rId);
+                Intent intent = new Intent(Restaurant_Edit.this, RestaurantList.class);
+                startActivity(intent);
+            }
+        });
+
+
 
         et_start.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -183,6 +195,17 @@ public class Restaurant_Edit extends AppCompatActivity {
         else {
             return false;
         }
+    }
+
+    private void deleteRestaurantData(String rId)
+    {
+        ActRef = ActRef.child("Users").child(uid).child("RestaurantData").child(rId);
+
+
+        ActRef.removeValue();
+
+
+        Toast.makeText(this,"Restaurant data deleted", Toast.LENGTH_LONG).show();
     }
 
 

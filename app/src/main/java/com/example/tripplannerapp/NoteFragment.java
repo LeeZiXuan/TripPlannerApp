@@ -1,5 +1,6 @@
 package com.example.tripplannerapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -24,6 +26,7 @@ import java.util.ArrayList;
 public class NoteFragment extends Fragment {
 
     RecyclerView recyclerView;
+    FloatingActionButton giftBtn;
     AddNotification addNotification; //adapter
     ArrayList<Trip> list;
 
@@ -41,6 +44,7 @@ public class NoteFragment extends Fragment {
 
         recyclerView = (RecyclerView) view.findViewById(R.id.notificationList);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        giftBtn = (FloatingActionButton) view.findViewById(R.id.addGiftBtn);
 
         fAuth = FirebaseAuth.getInstance();
         db = FirebaseDatabase.getInstance();
@@ -69,6 +73,14 @@ public class NoteFragment extends Fragment {
                     public void onCancelled(@NonNull DatabaseError error) {
                     }
                 });
+
+        giftBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(),ShakeSensor.class);
+                startActivity(intent);
+            }
+        });
 
 
         return view;

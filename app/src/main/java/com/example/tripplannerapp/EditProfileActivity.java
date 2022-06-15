@@ -171,7 +171,7 @@ public class EditProfileActivity extends AppCompatActivity {
     {
         if (isNameChanged() || isEmailChanged() || isPhoneChanged() || isPasswordChanged()){
             Toast.makeText(this,"Data has been updated", Toast.LENGTH_LONG).show();
-            backToProfile();
+
         }
         else {
             Toast.makeText(this,"Data is same and can not be updated", Toast.LENGTH_LONG).show();

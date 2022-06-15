@@ -36,20 +36,28 @@
                 android:id="@+id/R_start"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="24dp"
+                android:textSize="20dp"
                 android:textColor="@color/blue_1"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=" to "
-                android:textSize="24dp"
+                android:textSize="20dp"
                 android:textColor="@color/blue_1"/>
             <TextView
                 android:id="@+id/R_end"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="24dp"
+                android:textSize="20dp"
                 android:textColor="@color/blue_1"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_vertical">
             <TextView
 
                 android:layout_width="wrap_content"
@@ -57,7 +65,6 @@
                 android:text=" is added."
                 android:textSize="24dp"
                 android:textColor="@color/blue_1"/>
-
         </LinearLayout>
 
 

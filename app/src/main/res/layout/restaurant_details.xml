@@ -72,9 +72,9 @@
             android:layout_marginStart="0dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="0dp"
-            android:background="#B7FFFFFF"
+
             android:text="Restaurant Address"
-            android:textColor="@color/blue_1"
+            android:textColor="@color/black"
             android:textSize="20dp" />
 
         <TextView
