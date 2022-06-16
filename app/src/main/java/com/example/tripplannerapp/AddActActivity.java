@@ -44,8 +44,6 @@ public class AddActActivity extends AppCompatActivity {
     EditText start_date_time_in;
     EditText end_date_time_in;
 
-    ImageButton btn_back;
-
 
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -74,16 +72,7 @@ public class AddActActivity extends AppCompatActivity {
         end_date_time_in.setInputType(InputType.TYPE_NULL);
 
         Button btn_addActivity = findViewById(R.id.btn_saveAct);
-        ImageButton btn_back = findViewById(R.id.btn_back);
         /////////////////////////
-
-        btn_back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(AddActActivity.this, ActivityListActivity.class);
-                startActivity(intent);
-            }
-        });
 
         btn_addActivity.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -133,7 +122,8 @@ public class AddActActivity extends AppCompatActivity {
                             }
                         });
 
-                backToProfile();
+                Intent intent = new Intent(AddActActivity.this, ActivityListActivity.class);
+                startActivity(intent);
 
             }
 
@@ -185,11 +175,5 @@ public class AddActActivity extends AppCompatActivity {
 
         new DatePickerDialog(AddActActivity.this,dateSetListener,calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH),calendar.get(Calendar.DAY_OF_MONTH)).show();
     }
-
-    public void backToProfile(){
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-    }
-
 
 }

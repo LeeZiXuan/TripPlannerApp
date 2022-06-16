@@ -15,21 +15,28 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
 
 public class AddTrip extends AppCompatActivity {
 
     EditText destination, startDate,endDate,tripName, description;
     Button saveBtn;
-    DatabaseReference databaseTrip;
 
+    DatabaseReference databaseTrip;
     FirebaseAuth fAuth;
     FirebaseDatabase db;
     FirebaseUser user;
@@ -40,25 +47,19 @@ public class AddTrip extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_trip);
 
-        destination = findViewById(R.id.destination);
-        startDate = findViewById(R.id.startDate);
-        endDate = findViewById(R.id.endDate);
-        tripName = findViewById(R.id.tripName);
-        description = findViewById(R.id.description);
-        saveBtn = findViewById(R.id.saveBtn);
-
-        //Date picker
-        final Calendar calendar = Calendar.getInstance();
-        final int year = calendar.get(Calendar.YEAR);
-        final int month = calendar.get(Calendar.MONTH);
-        final int day = calendar.get(Calendar.DAY_OF_MONTH);
-
         //database
         fAuth = FirebaseAuth.getInstance();
         db = FirebaseDatabase.getInstance();
         user = FirebaseAuth.getInstance().getCurrentUser();
         uid = user.getUid();
         databaseTrip = FirebaseDatabase.getInstance().getReference();
+
+        destination = findViewById(R.id.destination);
+        startDate = findViewById(R.id.startDate);
+        endDate = findViewById(R.id.endDate);
+        tripName = findViewById(R.id.tripName);
+        description = findViewById(R.id.description);
+        saveBtn = findViewById(R.id.saveBtn);
 
         saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,6 +68,11 @@ public class AddTrip extends AppCompatActivity {
             }
         });
 
+        //Date picker
+        final Calendar calendar = Calendar.getInstance();
+        final int year = calendar.get(Calendar.YEAR);
+        final int month = calendar.get(Calendar.MONTH);
+        final int day = calendar.get(Calendar.DAY_OF_MONTH);
         startDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -98,14 +104,14 @@ public class AddTrip extends AppCompatActivity {
     }
 
     private void InsertData() {
-        String des = destination.getText().toString();
-        String start = startDate.getText().toString();
-        String end = endDate.getText().toString();
-        String tname = tripName.getText().toString();
-        String desc = description.getText().toString();
+        String des = destination.getText().toString().trim();
+        String start = startDate.getText().toString().trim();
+        String end = endDate.getText().toString().trim();
+        String tname = tripName.getText().toString().trim();
+        String desc = description.getText().toString().trim();
         String id = databaseTrip.push().getKey();
 
-        Trip trip = new Trip(des,start,end,tname,desc);
+        Trip trip = new Trip(des, start,end,tname,desc,id);
             db.getReference().child("Users").child(uid).child("Trip").child(id).setValue(trip)
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override

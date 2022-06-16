@@ -1,26 +1,19 @@
 package com.example.tripplannerapp;
 
+import com.google.firebase.database.DatabaseReference;
+
 public class Trip {
+    String destination, startDate, endDate, tripName, description, trip_id;
 
-    String destination;
-    String startDate;
-    String endDate;
-    String tripName;
-    String description;
+    public Trip() { }
 
-
-    public Trip() {
-
-    }
-
-
-    public Trip(String destination, String startDay, String endDate, String tripName, String description) {
+    public Trip(String destination, String startDate, String endDate, String tripName, String description, String trip_id){
         this.destination = destination;
-        this.startDate = startDay;
-
+        this.startDate = startDate;
         this.endDate = endDate;
         this.tripName = tripName;
         this.description = description;
+        this.trip_id = trip_id;
     }
 
     public String getDestination() { return destination; }
@@ -36,8 +29,6 @@ public class Trip {
     public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
-
-
 
     public String getEndDate() {
         return endDate;
@@ -62,4 +53,8 @@ public class Trip {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public String getTrip_id() {return trip_id;}
+
+    public void setTrip_id(String trip_id) {this.trip_id = trip_id;}
 }

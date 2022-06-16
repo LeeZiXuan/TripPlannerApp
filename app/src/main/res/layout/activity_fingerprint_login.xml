@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="30dp"
+    android:orientation="vertical"
+    tools:context=".FingerprintLogin">
+
+    <ImageView
+        android:id="@+id/fpImg"
+        android:layout_width="204dp"
+        android:layout_height="146dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="119dp"
+        android:layout_marginTop="153dp"
+        android:layout_marginEnd="118dp"
+        app:srcCompat="@drawable/ic_fingerprint" />
+    <TextView
+        android:id="@+id/text_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fpImg"
+        android:layout_marginTop="10dp"
+        android:text=""
+        android:textSize="20dp"
+        android:gravity="center"/>
+
+</RelativeLayout>

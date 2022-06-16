@@ -10,14 +10,25 @@
 
     <TextView
         android:id="@+id/showTripName"
-        android:layout_width="match_parent"
+        android:layout_width="288dp"
         android:layout_height="wrap_content"
-        android:text="Trip name"
-        android:textSize="30dp"
         android:layout_marginTop="20dp"
-        android:textColor="@color/white"/>
+        android:text="Trip name"
+        android:textColor="@color/white"
+        android:textSize="30dp" />
+
+    <ImageButton
+        android:id="@+id/btn_editTrip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="0dp"
+        android:backgroundTint="#00FFFFFF"
+        app:srcCompat="@drawable/ic_baseline_edit_24" />
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -38,7 +49,7 @@
             android:textColor="@color/white"
             android:layout_marginTop="10dp"/>
         <TextView
-            android:id="@+id/tv_activityType"
+            android:id="@+id/tv_EndDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="End Date"
@@ -46,6 +57,43 @@
             android:textColor="@color/white"
             android:layout_marginTop="10dp"/>
     </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LinearLayout4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/linearLayout2">
+        <TextView
+            android:id="@+id/tripTo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Trip to"
+            android:textSize="20dp"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:id="@+id/showTripDestination"
+            android:layout_width="288dp"
+            android:layout_height="wrap_content"
+            android:text="Destination"
+            android:textSize="25dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="15dp"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/showTripDescription"
+        android:layout_width="288dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/LinearLayout4"
+        android:text="Description"
+        android:textSize="25dp"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/white"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/addActivityBtn"
@@ -58,7 +106,8 @@
         android:clickable="true"
         android:focusable="true"
         app:backgroundTint="#FFFFFF"
-        app:srcCompat="@drawable/ic_add" />
+        app:srcCompat="@drawable/ic_add"
+        tools:ignore="SpeakableTextPresentCheck" />
 
 
 </RelativeLayout>

@@ -57,19 +57,19 @@ public class HomeFragment extends Fragment implements TripRecyclerViewInterface 
         recyclerView.setAdapter(adapter);
 
         db.getReference().child("Users").child(uid).child("Trip").
-            addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for(DataSnapshot dataSnapshot: snapshot.getChildren()){
-                    Trip trip = dataSnapshot.getValue(Trip.class);
-                    list.add(trip);
-                }
-                adapter.notifyDataSetChanged();
-            }
+                addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        for(DataSnapshot dataSnapshot: snapshot.getChildren()){
+                            Trip trip = dataSnapshot.getValue(Trip.class);
+                            list.add(trip);
+                        }
+                        adapter.notifyDataSetChanged();
+                    }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) { }
-        });
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) { }
+                });
 
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,10 +86,12 @@ public class HomeFragment extends Fragment implements TripRecyclerViewInterface 
     public void onItemClick(int position) {
         Intent intent = new Intent(getActivity(),Plan.class);
 
-        intent.putExtra("Trip name", list.get(position).getTripName());
-        intent.putExtra("Start Date", list.get(position).getStartDate());
-        intent.putExtra("End Date", list.get(position).getEndDate());
-
+        intent.putExtra("tripName", list.get(position).getTripName());
+        intent.putExtra("startDate", list.get(position).getStartDate());
+        intent.putExtra("endDate", list.get(position).getEndDate());
+        intent.putExtra("destination", list.get(position).getDestination());
+        intent.putExtra("description", list.get(position).getDescription());
+        intent.putExtra("trip_id", list.get(position).getTrip_id());
         startActivity(intent);
     }
 }

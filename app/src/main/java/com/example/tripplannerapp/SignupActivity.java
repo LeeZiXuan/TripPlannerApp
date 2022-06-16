@@ -30,14 +30,6 @@ public class SignupActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
-        EditText email=findViewById(R.id.email);
-        EditText password=findViewById(R.id.password);
-        EditText username=findViewById(R.id.username);
-        EditText phoneNum=findViewById(R.id.phoneNum);
-
-        Button signUp=findViewById(R.id.signupBtn);
-        TextView hasAcc=findViewById(R.id.loginHere);
-
         fAuth = FirebaseAuth.getInstance();
         db = FirebaseDatabase.getInstance();
 
@@ -46,6 +38,12 @@ public class SignupActivity extends AppCompatActivity {
             finish();
         }*/
 
+        // Signup section
+        EditText email=findViewById(R.id.email);
+        EditText password=findViewById(R.id.password);
+        EditText username=findViewById(R.id.username);
+        EditText phoneNum=findViewById(R.id.phoneNum);
+        Button signUp=findViewById(R.id.signupBtn);
         signUp.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -91,6 +89,8 @@ public class SignupActivity extends AppCompatActivity {
             }
         });
 
+        // If already have account
+        TextView hasAcc=findViewById(R.id.loginHere);
         hasAcc.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
