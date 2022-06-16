@@ -74,6 +74,7 @@ public class AddActActivity extends AppCompatActivity {
         Button btn_addActivity = findViewById(R.id.btn_saveAct);
         /////////////////////////
 
+
         btn_addActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -114,13 +115,13 @@ public class AddActActivity extends AppCompatActivity {
                 Activity activity = new Activity(activityName,activityType,activity_address,activity_des,start_date_time,end_date_time, id);
 
                 db.getReference().child("Users").child(uid).child("Activity").child(id).setValue(activity).addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
-                                if(task.isSuccessful()){
-                                    Toast.makeText(AddActActivity.this,"Activity details inserted", Toast.LENGTH_SHORT).show();
-                                }
-                            }
-                        });
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if(task.isSuccessful()){
+                            Toast.makeText(AddActActivity.this,"Activity details inserted", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
 
                 Intent intent = new Intent(AddActActivity.this, ActivityListActivity.class);
                 startActivity(intent);
@@ -175,5 +176,7 @@ public class AddActActivity extends AppCompatActivity {
 
         new DatePickerDialog(AddActActivity.this,dateSetListener,calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH),calendar.get(Calendar.DAY_OF_MONTH)).show();
     }
+
+
 
 }

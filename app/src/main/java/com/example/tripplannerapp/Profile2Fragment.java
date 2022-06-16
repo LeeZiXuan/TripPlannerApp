@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -19,6 +20,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 
 public class Profile2Fragment extends Fragment {
@@ -29,6 +31,8 @@ public class Profile2Fragment extends Fragment {
     DatabaseReference userRef;
     FirebaseUser user;
     String uid;
+
+    ImageView img_profilePic;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -50,6 +54,7 @@ public class Profile2Fragment extends Fragment {
         TextView tv_phone = (TextView) view.findViewById(R.id.tv_phone);
         TextView tv_email = (TextView) view.findViewById(R.id.tv_email);
         TextView tv_pass = (TextView) view.findViewById(R.id.tv_pass);
+        ImageView img_profilePic = (ImageView) view.findViewById(R.id.img_profilePic);
 
         ImageButton btn_editProfile = (ImageButton) view.findViewById(R.id.btn_editAct);
         ImageButton btn_addAct = (ImageButton) view.findViewById(R.id.btn_addAct);
@@ -61,6 +66,9 @@ public class Profile2Fragment extends Fragment {
                 tv_phone.setText(snapshot.child("Users").child(uid).child("phoneNum").getValue(String.class));
                 tv_email.setText(snapshot.child("Users").child(uid).child("email").getValue(String.class));
                 tv_pass.setText(snapshot.child("Users").child(uid).child("password").getValue(String.class));
+
+                String value = snapshot.child("Users").child(uid).child("ProfilePic").child("imageUri").getValue(String.class);
+                Picasso.get().load(value).into(img_profilePic);
             }
 
             @Override

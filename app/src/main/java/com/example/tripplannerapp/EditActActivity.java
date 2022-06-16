@@ -1,7 +1,9 @@
 package com.example.tripplannerapp;
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
@@ -108,24 +110,53 @@ public class EditActActivity extends AppCompatActivity {
             }
         });
 
+        btn_delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(EditActActivity.this);
+                builder.setTitle("Are You Sure?");
+                builder.setMessage("Deleted data can't be Undo.");
+
+                builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        db.getReference().child("Users").child(uid).child("Activity").child(aId).removeValue();
+                        Toast.makeText(EditActActivity.this, "Deleted.", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(EditActActivity.this, ActivityListActivity.class);
+                        startActivity(intent);
+
+                    }
+                });
+
+                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Toast.makeText(EditActActivity.this, "Cancelled.", Toast.LENGTH_SHORT).show();
+                    }
+                });
+                builder.show();
+            }
+        });
+
 
 
         btn_saveAct.setOnClickListener(new View.OnClickListener() {
 
-           @Override
+            @Override
             public void onClick(View view) {
 
                 if (isActNameChanged() || isActTypeChanged() || isActStartDateChanged() || isActEndDateChanged() || isActAddressChanged() || isActDesChanged()){
                     Toast.makeText(EditActActivity.this,"Data has been updated", Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(EditActActivity.this, ActivityListActivity.class);
+                    startActivity(intent);
                 }
                 else {
                     Toast.makeText(EditActActivity.this,"Data is same and can not be updated", Toast.LENGTH_LONG).show();
 
                 }
-               Intent intent = new Intent(EditActActivity.this, ActivityListActivity.class);
-               startActivity(intent);
 
-        }
+
+            }
 
         });
 

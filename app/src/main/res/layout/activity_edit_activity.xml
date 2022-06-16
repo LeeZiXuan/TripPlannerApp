@@ -149,7 +149,7 @@
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         android:text="SAVE"
-        android:textColor="@color/green_1"
+        android:textColor="@color/white"
         android:textSize="20sp" />
 
     <Button
@@ -164,7 +164,7 @@
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         android:text="DELETE"
-        android:textColor="@color/green_1"
+        android:textColor="@color/white"
         android:textSize="20sp" />
 
 

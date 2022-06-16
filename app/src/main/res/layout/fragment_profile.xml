@@ -126,7 +126,7 @@
         android:id="@+id/tv_username"
         android:layout_width="175dp"
         android:layout_height="38dp"
-        android:layout_below="@+id/img_profile"
+        android:layout_below="@+id/img_profilePic"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="20dp"
@@ -159,7 +159,7 @@
         app:srcCompat="@drawable/ic_baseline_edit_24" />
 
     <ImageView
-        android:id="@+id/img_profile"
+        android:id="@+id/img_profilePic"
         android:layout_width="131dp"
         android:layout_height="124dp"
         android:layout_below="@+id/textView"
