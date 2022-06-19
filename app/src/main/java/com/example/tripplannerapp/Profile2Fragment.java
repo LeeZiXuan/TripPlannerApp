@@ -57,7 +57,6 @@ public class Profile2Fragment extends Fragment {
         ImageView img_profilePic = (ImageView) view.findViewById(R.id.img_profilePic);
 
         ImageButton btn_editProfile = (ImageButton) view.findViewById(R.id.btn_editAct);
-        ImageButton btn_addAct = (ImageButton) view.findViewById(R.id.btn_addAct);
 
         userRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -77,14 +76,6 @@ public class Profile2Fragment extends Fragment {
             }
         });
 
-        btn_addAct.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getActivity(),ActivityListActivity.class);
-                intent.putExtra("resId", R.drawable.ic_person);
-                startActivity(intent);
-            }
-        });
 
 
         btn_editProfile.setOnClickListener(new View.OnClickListener() {

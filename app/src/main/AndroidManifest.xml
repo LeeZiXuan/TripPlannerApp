@@ -17,6 +17,21 @@
         android:theme="@style/Theme.TripPlannerApp">
 
         <activity
+            android:name=".ShakeSensor"
+            android:exported="false"
+            android:label="Shake Phone"
+            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".Transportation"
+            android:exported="false"
+            android:label="Transportation"
+            android:parentActivityName=".AddPlan"/>
+        <activity
+            android:name=".flight"
+            android:exported="false"
+            android:label="Flight"
+            android:parentActivityName=".AddPlan"/>
+        <activity
             android:name=".EditTrip"
             android:exported="false"
             android:label="Update Trip"
@@ -32,7 +47,9 @@
             android:parentActivityName=".ActivityListActivity" />
         <activity
             android:name=".Hotel"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Hotel"
+            android:parentActivityName=".Plan"/>
         <activity
             android:name=".ActivityDetailsActivity"
             android:exported="false"
@@ -41,10 +58,13 @@
         <activity
             android:name=".AddPlan"
             android:exported="false"
-            android:label="" />
+            android:label="Add Plan"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".RestaurantList"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Restaurant"
+            android:parentActivityName=".AddPlan"/>
         <activity
             android:name=".AddActActivity"
             android:exported="false"
@@ -74,22 +94,23 @@
         <activity
             android:name=".Room"
             android:exported="false"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".Hotel" />
         <activity
             android:name=".Restaurant_Edit"
             android:exported="false"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".RestaurantList" />
         <activity
             android:name=".RestaurantDetailsActivity"
             android:exported="false"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".RestaurantList" />
         <activity
             android:name=".ActivityListActivity"
             android:exported="false"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".AddPlan" />
         <activity
             android:name=".RestaurantAdd"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".RestaurantList"/>
         <activity
             android:name=".LoginActivity"
             android:exported="true"
