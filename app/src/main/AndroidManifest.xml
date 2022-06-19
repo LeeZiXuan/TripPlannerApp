@@ -49,7 +49,7 @@
             android:name=".Hotel"
             android:exported="false"
             android:label="Hotel"
-            android:parentActivityName=".Plan"/>
+            android:parentActivityName=".AddPlan"/>
         <activity
             android:name=".ActivityDetailsActivity"
             android:exported="false"
