@@ -45,8 +45,8 @@ public class AddNotification extends RecyclerView.Adapter<AddNotification.MyView
         Trip trip = list.get(position);
 
 
-            holder.nameTrip.setText(trip.getTripName());
-            holder.startTrip.setText(trip.getStartDate());
+        holder.nameTrip.setText(trip.getDestination());
+        holder.startTrip.setText(trip.getStartDate());
 
 
     }

@@ -21,60 +21,75 @@
             android:layout_height="58dp"
             android:layout_marginRight="20dp"
             android:layout_weight="1"
+            android:outlineAmbientShadowColor="@color/green_2"
             app:srcCompat="@drawable/ic_baseline_notifications_24" />
 
         <TextView
-            android:id="@+id/place"
-            android:layout_width="120dp"
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
 
             android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
             android:layout_toEndOf="@+id/imageView3"
+            android:text="Trip to "
+            android:textColor="@color/blue_1"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/place"
+            android:layout_width="94dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@+id/textView4"
             android:text="Thailand"
-            android:textColor="@color/black"
+            android:textColor="@color/blue_1"
             android:textSize="20sp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/reminder"
-            android:layout_width="wrap_content"
+            android:layout_width="117dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/place"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="2dp"
-            android:layout_toEndOf="@+id/imageView3"
-            android:text="12/5/2022"
-            android:textColor="@color/black"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="120dp"
+            android:layout_toEndOf="@+id/textView"
+            android:text="12/12"
+            android:textColor="@color/blue_1"
             android:textSize="18sp" />
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="43dp"
+            android:layout_width="35dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="109dp"
-            android:layout_toEndOf="@+id/place"
+            android:layout_below="@+id/textView4"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="1dp"
+            android:layout_toEndOf="@+id/imageView3"
             android:text="on"
-            android:textColor="@color/black"
+            android:textColor="@color/blue_1"
             android:textSize="20dp" />
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="131dp"
+            android:layout_width="152dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textView"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginEnd="42dp"
-            android:layout_toEndOf="@+id/reminder"
-            android:text="was created"
-            android:textColor="@color/black"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="120dp"
+            android:layout_toEndOf="@+id/imageView3"
+            android:text="was created."
+            android:textColor="@color/blue_1"
             android:textSize="20sp" />
 
 
